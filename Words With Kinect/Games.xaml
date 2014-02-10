@@ -7,6 +7,8 @@
              d:DesignHeight="800" d:DesignWidth="1200">
     <Grid>
         <Label Content="Games" HorizontalAlignment="Left" Margin="497,140,0,0" VerticalAlignment="Top" FontSize="72"/>
-
+        <Button Content="Column Sort" HorizontalAlignment="Left" Margin="502,476,0,0" VerticalAlignment="Top" Width="221" Height="68" FontSize="36"/>
+        <Button Content="Memory" HorizontalAlignment="Left" Margin="854,476,0,0" VerticalAlignment="Top" Width="221" Height="68" FontSize="36"/>
+        <Button Content="Matching" HorizontalAlignment="Left" Margin="156,476,0,0" VerticalAlignment="Top" Width="221" Height="68" FontSize="36"/>
     </Grid>
 </UserControl>
