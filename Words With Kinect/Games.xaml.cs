@@ -16,21 +16,13 @@ using System.Windows.Shapes;
 namespace Words_With_Kinect
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Games.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Games : UserControl
     {
-        public MainWindow()
+        public Games()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //Games gameScreen = new Games();
-            //gameScreen.Show();
-           // this.Close();
-            this.Content = new Games();
         }
     }
 }
