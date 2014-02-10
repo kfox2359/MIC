@@ -27,6 +27,7 @@ namespace Words_With_Kinect
 
         private void CustomButton_Click(object sender, RoutedEventArgs e)
         {
+            //This is where that custom code goes
             MessageBox.Show("Test");
         }
     }

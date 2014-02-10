@@ -27,9 +27,6 @@ namespace Words_With_Kinect
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //Games gameScreen = new Games();
-            //gameScreen.Show();
-           // this.Close();
             this.Content = new Games();
         }
     }
