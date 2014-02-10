@@ -86,6 +86,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CustomButton.cs" />
     <Compile Include="Games.xaml.cs">
       <DependentUpon>Games.xaml</DependentUpon>
     </Compile>

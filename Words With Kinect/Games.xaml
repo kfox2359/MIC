@@ -1,14 +1,23 @@
-﻿<UserControl x:Class="Words_With_Kinect.Games"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:k="http://schemas.microsoft.com/kinect/2013"
+             xmlns:local="clr-namespace:Words_With_Kinect" x:Class="Words_With_Kinect.Games"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200">
     <Grid>
-        <Label Content="Games" HorizontalAlignment="Left" Margin="497,140,0,0" VerticalAlignment="Top" FontSize="72"/>
-        <Button Content="Column Sort" HorizontalAlignment="Left" Margin="502,476,0,0" VerticalAlignment="Top" Width="221" Height="68" FontSize="36"/>
-        <Button Content="Memory" HorizontalAlignment="Left" Margin="854,476,0,0" VerticalAlignment="Top" Width="221" Height="68" FontSize="36"/>
-        <Button Content="Matching" HorizontalAlignment="Left" Margin="156,476,0,0" VerticalAlignment="Top" Width="221" Height="68" FontSize="36"/>
+        <k:KinectSensorChooserUI HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="sensorChooserUi"/>
+        <k:KinectRegion x:Name="kinectRegion" Margin="0,0,10,0">
+            <Grid>
+                <Label Content="Games" HorizontalAlignment="Left" Margin="497,140,0,0" VerticalAlignment="Top" FontSize="72"/>
+
+                <local:CustomButton Content="Column Sort" HorizontalAlignment="Left" Margin="458,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48"/>
+                <local:CustomButton Content="Matching" HorizontalAlignment="Left" Margin="66,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48"/>
+                <local:CustomButton Content="Memory" HorizontalAlignment="Left" Margin="838,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48" Click="CustomButton_Click"/>
+
+            </Grid>
+        </k:KinectRegion>
     </Grid>
 </UserControl>

@@ -24,5 +24,10 @@ namespace Words_With_Kinect
         {
             InitializeComponent();
         }
+
+        private void CustomButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Test");
+        }
     }
 }
