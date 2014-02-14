@@ -22,11 +22,13 @@ namespace Words_With_Kinect
     /// </summary>
     public partial class Games : UserControl
     {
-        private KinectSensorChooser sensorChooser;
-        public Games()
+        //private KinectSensorChooser sensorChooser;
+        public Games(KinectSensor kinect)
         {
+            //this.sensorChooser.KinectSensor = kinect;
             InitializeComponent();
-            Loaded += OnLoaded;
+            kinectRegion.KinectSensor = kinect;// sensorChooser.Kinect;
+           // Loaded += OnLoaded;
             InitializeComponent();
         }
 
@@ -34,10 +36,10 @@ namespace Words_With_Kinect
 
         private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
         {
-            this.sensorChooser = new KinectSensorChooser();
-            this.sensorChooser.KinectChanged += SensorChooserOnKinectChanged;
-            this.sensorChooserUi.KinectSensorChooser = this.sensorChooser;
-            this.sensorChooser.Start();
+            //this.sensorChooser = new KinectSensorChooser();
+            //this.sensorChooser.KinectChanged += SensorChooserOnKinectChanged;
+            //this.sensorChooserUi.KinectSensorChooser = this.sensorChooser;
+           // this.sensorChooser.Start();
         }
         /// <summary>
         /// Takes care of when a new kinect comes in

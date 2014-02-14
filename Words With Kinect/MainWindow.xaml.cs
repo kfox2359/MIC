@@ -103,9 +103,10 @@ namespace Words_With_Kinect
 
         private void CustomButton_Click(object sender, RoutedEventArgs e)
         {
-            this.sensorChooser.Kinect.Stop();
-            this.sensorChooser.Stop();
-            this.Content = new Games();
+           // this.sensorChooser.Kinect.Stop();
+            
+            this.Content = new Games(sensorChooser.Kinect);
+           // this.sensorChooser.Stop();
             /* this about passing the kinect as a parameter to the next class, that way we
              * do not have to worry about resetting the kinect up. Also thing about making the boilerplate code
              * into a seperate class */

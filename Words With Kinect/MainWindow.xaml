@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:k="http://schemas.microsoft.com/kinect/2013"
         xmlns:local="clr-namespace:Words_With_Kinect" x:Class="Words_With_Kinect.MainWindow"
-        Title="MainWindow" Height="800" Width="1200">
+        Title="MainWindow" HorizontalAlignment="Center" VerticalAlignment="Top" Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <k:KinectSensorChooserUI HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="sensorChooserUi"/>
         <k:KinectRegion x:Name="kinectRegion" Margin="0,0,10,0">
