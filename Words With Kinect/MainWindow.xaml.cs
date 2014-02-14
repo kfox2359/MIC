@@ -25,6 +25,7 @@ namespace Words_With_Kinect
         
         private KinectSensorChooser sensorChooser;
         private bool nearMode;
+
         public MainWindow(bool nearMode)
         {
             this.nearMode = nearMode;
@@ -75,8 +76,6 @@ namespace Words_With_Kinect
                     args.NewSensor.DepthStream.Enable(DepthImageFormat.Resolution640x480Fps30);
                     args.NewSensor.SkeletonStream.Enable();
 
-                    try
-                    {
                         if (nearMode == true)
                         {
                             args.NewSensor.DepthStream.Range = DepthRange.Near;
@@ -90,14 +89,6 @@ namespace Words_With_Kinect
                             args.NewSensor.SkeletonStream.TrackingMode = SkeletonTrackingMode.Default;
                         }
 
-                    }
-                    catch (InvalidOperationException)
-                    {
-                        // Non Kinect for Windows devices do not support Near mode, so reset back to default mode.
-                        args.NewSensor.DepthStream.Range = DepthRange.Default;
-                        args.NewSensor.SkeletonStream.EnableTrackingInNearRange = false;
-                        error = true;
-                    }
                 }
                 catch (InvalidOperationException)
                 {
