@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Kinect.Toolkit;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,17 +13,33 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Kinect;
 
 namespace Words_With_Kinect
 {
     /// <summary>
     /// Interaction logic for MemoryGame.xaml
     /// </summary>
-    public partial class MemoryGame : UserControl
+    public partial class MemoryGame : ContentControl
     {
-        public MemoryGame()
+        private KinectSensor kinect;
+
+        public MemoryGame(KinectSensor kinect)
         {
+            this.kinect = kinect;
             InitializeComponent();
+            kinectRegion.KinectSensor = kinect;
+            InitializeComponent();
+        }
+
+        /// <summary>
+        /// Open the actual game screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CustomButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Content = new MemoryGameScreen(kinect);
         }
     }
 }

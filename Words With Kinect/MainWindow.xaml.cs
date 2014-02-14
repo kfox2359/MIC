@@ -24,8 +24,10 @@ namespace Words_With_Kinect
     {       
         
         private KinectSensorChooser sensorChooser;
-        public MainWindow()
+        private bool nearMode;
+        public MainWindow(bool nearMode)
         {
+            this.nearMode = nearMode;
             InitializeComponent();
             Loaded += OnLoaded;
             InitializeComponent();
@@ -75,9 +77,19 @@ namespace Words_With_Kinect
 
                     try
                     {
-                        args.NewSensor.DepthStream.Range = DepthRange.Near;
-                        args.NewSensor.SkeletonStream.EnableTrackingInNearRange = true;
-                        args.NewSensor.SkeletonStream.TrackingMode = SkeletonTrackingMode.Seated;
+                        if (nearMode == true)
+                        {
+                            args.NewSensor.DepthStream.Range = DepthRange.Near;
+                            args.NewSensor.SkeletonStream.EnableTrackingInNearRange = true;
+                            args.NewSensor.SkeletonStream.TrackingMode = SkeletonTrackingMode.Seated;
+                        }
+                        else
+                        {
+                            args.NewSensor.DepthStream.Range = DepthRange.Default;
+                            args.NewSensor.SkeletonStream.EnableTrackingInNearRange = false;
+                            args.NewSensor.SkeletonStream.TrackingMode = SkeletonTrackingMode.Default;
+                        }
+
                     }
                     catch (InvalidOperationException)
                     {
@@ -104,7 +116,6 @@ namespace Words_With_Kinect
         private void CustomButton_Click(object sender, RoutedEventArgs e)
         {
            // this.sensorChooser.Kinect.Stop();
-            
             this.Content = new Games(sensorChooser.Kinect);
            // this.sensorChooser.Stop();
             /* this about passing the kinect as a parameter to the next class, that way we

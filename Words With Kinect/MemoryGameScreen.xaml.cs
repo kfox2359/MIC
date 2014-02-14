@@ -18,27 +18,18 @@ using Microsoft.Kinect;
 namespace Words_With_Kinect
 {
     /// <summary>
-    /// Interaction logic for Games.xaml
+    /// Interaction logic for MemoryGameScreen.xaml
     /// </summary>
-    public partial class Games : ContentControl
+    public partial class MemoryGameScreen : ContentControl
     {
         private KinectSensor kinect;
-        public Games(KinectSensor kinect)
+   
+        public MemoryGameScreen(KinectSensor kinect)
         {
             this.kinect = kinect;
             InitializeComponent();
-            kinectRegion.KinectSensor = this.kinect;
+            kinectRegion.KinectSensor = kinect;
             InitializeComponent();
-        }
-
-
-       
-
-
-        private void CustomButton_Click(object sender, RoutedEventArgs e)
-        {
-            //This is where that custom code goes
-            this.Content = new MemoryGame(kinect);
         }
     }
 }
