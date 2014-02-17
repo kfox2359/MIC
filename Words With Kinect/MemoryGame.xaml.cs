@@ -41,5 +41,10 @@ namespace Words_With_Kinect
         {
             this.Content = new MemoryGameScreen(kinect);
         }
+
+        private void CustomButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Content = new Games(kinect);
+        }
     }
 }

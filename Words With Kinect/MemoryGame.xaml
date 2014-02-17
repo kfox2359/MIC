@@ -15,6 +15,7 @@
                 <TextBlock HorizontalAlignment="Left" Margin="343,294,0,0" TextWrapping="Wrap" Text="Select a block to flip it over. Find two of the same to score a point. Good Luck!" VerticalAlignment="Top" Height="258" Width="572" FontSize="48"/>
 
                 <local:CustomButton Content="Start" HorizontalAlignment="Left" Margin="455,604,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48" Click="CustomButton_Click"/>
+                <local:CustomButton Content="Back" Margin="76,682,942,0" VerticalAlignment="Top" Height="62" FontSize="48" Click="CustomButton_Click_1"/>
 
             </Grid>
         </k:KinectRegion>
