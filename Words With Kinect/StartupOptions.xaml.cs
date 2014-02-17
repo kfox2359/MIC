@@ -41,7 +41,7 @@ namespace Words_With_Kinect
             App.Current.MainWindow = app;
             this.Close();
             app.Show();
-            //
+           
         }
     }
 }
