@@ -20,16 +20,18 @@ namespace Words_With_Kinect
     /// <summary>
     /// Interaction logic for MemoryGame.xaml
     /// </summary>
-    public partial class MemoryGame : ContentControl
+    public partial class MemoryGame : UserControl
     {
         private KinectSensor kinect;
+        private MainWindow window;
 
-        public MemoryGame(KinectSensor kinect)
+        public MemoryGame(MainWindow window,KinectSensor kinect)
         {
             this.kinect = kinect;
+            this.window = window;
             InitializeComponent();
             kinectRegion.KinectSensor = kinect;
-            InitializeComponent();
+           // InitializeComponent();
         }
 
         /// <summary>
@@ -39,12 +41,16 @@ namespace Words_With_Kinect
         /// <param name="e"></param>
         private void CustomButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Content = new MemoryGameScreen(kinect);
+            kinectRegion.KinectSensor = null;
+            Task.Delay(2000);
+            this.window.Content = new MemoryGameScreen(this.window,kinect);
         }
 
         private void CustomButton_Click_1(object sender, RoutedEventArgs e)
         {
-            this.Content = new Games(kinect);
+            kinectRegion.KinectSensor = null;
+            
+            this.window.Content = new Games(this.window,kinect);
         }
     }
 }

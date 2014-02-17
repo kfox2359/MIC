@@ -2,6 +2,7 @@
 using Microsoft.Kinect.Toolkit;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,8 +31,23 @@ namespace Words_With_Kinect
         {
             this.nearMode = nearMode;
             InitializeComponent();
+            Closing += MainWindow_Closing;
             Loaded += OnLoaded;
-            InitializeComponent();
+            //InitializeComponent();
+        }
+
+        void MainWindow_Closing(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                 sensorChooser.Kinect.Stop();
+                 sensorChooser.Stop();
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
 
         #region BoilerPlate Code for the kinect 
@@ -106,12 +122,12 @@ namespace Words_With_Kinect
 
         private void CustomButton_Click(object sender, RoutedEventArgs e)
         {
-           // this.sensorChooser.Kinect.Stop();
-            this.Content = new Games(sensorChooser.Kinect);
-           // this.sensorChooser.Stop();
-            /* this about passing the kinect as a parameter to the next class, that way we
-             * do not have to worry about resetting the kinect up. Also thing about making the boilerplate code
-             * into a seperate class */
+            this.Content = new Games(this,sensorChooser.Kinect);
+        }
+
+        private void kinectRegion_Unloaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

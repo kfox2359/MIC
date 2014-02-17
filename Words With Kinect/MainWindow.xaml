@@ -4,10 +4,11 @@
         xmlns:k="http://schemas.microsoft.com/kinect/2013"
         xmlns:local="clr-namespace:Words_With_Kinect" x:Class="Words_With_Kinect.MainWindow"
         Title="MainWindow" HorizontalAlignment="Center" VerticalAlignment="Center" Height="800" Width="1200"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        >
     <Grid>
         <k:KinectSensorChooserUI HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="sensorChooserUi"/>
-        <k:KinectRegion x:Name="kinectRegion" Margin="0,0,10,0">
+        <k:KinectRegion x:Name="kinectRegion" Margin="0,0,10,0" Unloaded="kinectRegion_Unloaded">
             <Grid>
                 <Label Content="Words With Kinect" HorizontalAlignment="Left" Margin="290,143,0,0" VerticalAlignment="Top" FontSize="72"/>
 

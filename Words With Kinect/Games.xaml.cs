@@ -20,25 +20,25 @@ namespace Words_With_Kinect
     /// <summary>
     /// Interaction logic for Games.xaml
     /// </summary>
-    public partial class Games : ContentControl
+    public partial class Games : UserControl
     {
         private KinectSensor kinect;
-        public Games(KinectSensor kinect)
+        private MainWindow window;
+        public Games(MainWindow window ,KinectSensor kinect)
         {
             this.kinect = kinect;
+            this.window = window;
             InitializeComponent();
             kinectRegion.KinectSensor = this.kinect;
-            InitializeComponent();
+           // InitializeComponent();
         }
-
-
-       
-
 
         private void CustomButton_Click(object sender, RoutedEventArgs e)
         {
             //This is where that custom code goes
-            this.Content = new MemoryGame(kinect);
+            kinectRegion.KinectSensor = null;
+            
+            this.window.Content = new MemoryGame(this.window,kinect);
         }
     }
 }

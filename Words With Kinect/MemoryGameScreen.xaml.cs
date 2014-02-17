@@ -20,16 +20,25 @@ namespace Words_With_Kinect
     /// <summary>
     /// Interaction logic for MemoryGameScreen.xaml
     /// </summary>
-    public partial class MemoryGameScreen : ContentControl
+    public partial class MemoryGameScreen : UserControl
     {
         private KinectSensor kinect;
+        private MainWindow window;
    
-        public MemoryGameScreen(KinectSensor kinect)
+        public MemoryGameScreen(MainWindow window,KinectSensor kinect)
         {
             this.kinect = kinect;
+            this.window = window;
             InitializeComponent();
-            kinectRegion.KinectSensor = kinect;
-            InitializeComponent();
+            this.kinectRegion.KinectSensor = kinect;
+           // InitializeComponent();
+        }
+
+        private void CustomButton_Click(object sender, RoutedEventArgs e)
+        {
+            kinectRegion.KinectSensor = null;
+            
+            this.window.Content = new MemoryGame(this.window,this.kinect);
         }
     }
 }

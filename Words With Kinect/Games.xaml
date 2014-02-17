@@ -1,4 +1,4 @@
-﻿<ContentControl
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,6 +9,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200">
     <Grid>
+
         <k:KinectRegion x:Name="kinectRegion" Margin="0,0,10,0">
             <Grid>
                 <Label Content="Games" HorizontalAlignment="Left" Margin="497,140,0,0" VerticalAlignment="Top" FontSize="72"/>
@@ -19,5 +20,6 @@
 
             </Grid>
         </k:KinectRegion>
+
     </Grid>
- </ContentControl>
+</UserControl>
