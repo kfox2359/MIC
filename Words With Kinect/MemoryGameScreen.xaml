@@ -8,11 +8,9 @@
             x:Class="Words_With_Kinect.MemoryGameScreen"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200">
-    <Grid>
-        <k:KinectRegion x:Name="kinectRegion" Margin="0,0,10,0">
-            <Grid>
-                <local:CustomButton Content="Back" Margin="76,682,942,0" VerticalAlignment="Top" Height="62" FontSize="48" Click="CustomButton_Click"/>
-            </Grid>
-        </k:KinectRegion>
-    </Grid>
+    <k:KinectRegion x:Name="kinectRegion" Margin="0,0,10,0">
+        <Grid>
+            <k:KinectTileButton Content="Back" Margin="76,682,939,0" VerticalAlignment="Top" Height="62" FontSize="36" Click="CustomButton_Click" Width="Auto"/>
+        </Grid>
+    </k:KinectRegion>
 </UserControl>

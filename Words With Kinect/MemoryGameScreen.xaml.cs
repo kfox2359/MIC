@@ -31,13 +31,10 @@ namespace Words_With_Kinect
             this.window = window;
             InitializeComponent();
             this.kinectRegion.KinectSensor = kinect;
-           // InitializeComponent();
         }
 
         private void CustomButton_Click(object sender, RoutedEventArgs e)
-        {
-            kinectRegion.KinectSensor = null;
-            
+        {   
             this.window.Content = new MemoryGame(this.window,this.kinect);
         }
     }

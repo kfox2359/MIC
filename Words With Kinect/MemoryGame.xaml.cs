@@ -31,7 +31,6 @@ namespace Words_With_Kinect
             this.window = window;
             InitializeComponent();
             kinectRegion.KinectSensor = kinect;
-           // InitializeComponent();
         }
 
         /// <summary>
@@ -48,8 +47,6 @@ namespace Words_With_Kinect
 
         private void CustomButton_Click_1(object sender, RoutedEventArgs e)
         {
-            kinectRegion.KinectSensor = null;
-            
             this.window.Content = new Games(this.window,kinect);
         }
     }

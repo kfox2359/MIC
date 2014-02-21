@@ -35,9 +35,6 @@ namespace Words_With_Kinect
 
         private void CustomButton_Click(object sender, RoutedEventArgs e)
         {
-            //This is where that custom code goes
-            kinectRegion.KinectSensor = null;
-            
             this.window.Content = new MemoryGame(this.window,kinect);
         }
     }

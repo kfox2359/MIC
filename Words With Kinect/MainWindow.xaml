@@ -12,8 +12,8 @@
             <Grid>
                 <Label Content="Words With Kinect" HorizontalAlignment="Left" Margin="290,143,0,0" VerticalAlignment="Top" FontSize="72"/>
 
-                <local:CustomButton Content="Start" HorizontalAlignment="Left" Margin="458,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48" Click="CustomButton_Click"/>
-
+                
+                <k:KinectTileButton Content="Start" HorizontalAlignment="Left" Margin="458,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48" Click="CustomButton_Click" />
             </Grid>
         </k:KinectRegion>
     </Grid>

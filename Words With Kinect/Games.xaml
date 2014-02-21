@@ -14,9 +14,9 @@
             <Grid>
                 <Label Content="Games" HorizontalAlignment="Left" Margin="497,140,0,0" VerticalAlignment="Top" FontSize="72"/>
 
-                <local:CustomButton Content="Column Sort" HorizontalAlignment="Left" Margin="458,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48"/>
-                <local:CustomButton Content="Matching" HorizontalAlignment="Left" Margin="66,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48"/>
-                <local:CustomButton Content="Memory" HorizontalAlignment="Left" Margin="838,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48" Click="CustomButton_Click"/>
+                <k:KinectTileButton Content="Column Sort" HorizontalAlignment="Left" Margin="458,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48"/>
+                <k:KinectTileButton Content="Matching" HorizontalAlignment="Left" Margin="66,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48"/>
+                <k:KinectTileButton Content="Memory" HorizontalAlignment="Left" Margin="838,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48" Click="CustomButton_Click"/>
 
             </Grid>
         </k:KinectRegion>
