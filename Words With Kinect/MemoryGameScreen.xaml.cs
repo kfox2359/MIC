@@ -34,8 +34,13 @@ namespace Words_With_Kinect
         }
 
         private void CustomButton_Click(object sender, RoutedEventArgs e)
-        {   
+        {
             this.window.Content = new MemoryGame(this.window,this.kinect);
+        }
+
+        private void KinectTileButton_Click(object sender, RoutedEventArgs e)
+        {
+           
         }
     }
 }
