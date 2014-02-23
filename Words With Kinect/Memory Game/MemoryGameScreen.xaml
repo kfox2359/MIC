@@ -15,8 +15,6 @@
     <k:KinectRegion x:Name="kinectRegion" Margin="0,0,10,0">
         <Grid>
             <k:KinectTileButton Content="Back" Margin="76,682,939,0" VerticalAlignment="Top" Height="62" FontSize="36" Click="CustomButton_Click" Width="Auto" Foreground="#FFEDF7F7"/>
-
-
             <k:KinectTileButton x:Name="R3C1Btn" Margin="181,480,829,0" VerticalAlignment="Top" Height="175" Width="180" FontSize="36" Background="#FF50AC1C" Click="R3C1Btn_Click"/>
             <Image x:Name="R3C1Img" Margin="190,488,836,0" VerticalAlignment="Top" Height="161" Stretch="Uniform" Source="/Words With Kinect;component/Resources/Ball.jpg"/>
 
