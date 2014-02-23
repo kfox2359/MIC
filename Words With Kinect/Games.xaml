@@ -8,18 +8,19 @@
              x:Class="Words_With_Kinect.Games"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200">
-    <Grid>
 
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Words With Kinect;component/Resources/Blackboard.jpg"/>
+    </UserControl.Background>
         <k:KinectRegion x:Name="kinectRegion" Margin="0,0,10,0">
             <Grid>
-                <Label Content="Games" HorizontalAlignment="Left" Margin="497,140,0,0" VerticalAlignment="Top" FontSize="72"/>
+                <Label Content="Games" HorizontalAlignment="Left" Margin="497,140,0,0" VerticalAlignment="Top" FontSize="72" Foreground="#FFF7EDED" FontFamily="Comic Sans MS"/>
 
-                <k:KinectTileButton Content="Column Sort" HorizontalAlignment="Left" Margin="458,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48"/>
-                <k:KinectTileButton Content="Matching" HorizontalAlignment="Left" Margin="66,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48"/>
-                <k:KinectTileButton Content="Memory" HorizontalAlignment="Left" Margin="838,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48" Click="CustomButton_Click"/>
-
+                <k:KinectTileButton Content="Column Sort" HorizontalAlignment="Left" Margin="458,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="36" Foreground="#FFF1F7F7"/>
+                <k:KinectTileButton Content="Matching" HorizontalAlignment="Left" Margin="66,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="36" Foreground="#FFF1F7F7"/>
+                <k:KinectTileButton Content="Memory" HorizontalAlignment="Left" Margin="837,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="36" Click="CustomButton_Click" Foreground="#FFF1F7F7"/>
+                
             </Grid>
         </k:KinectRegion>
 
-    </Grid>
 </UserControl>

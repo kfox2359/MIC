@@ -6,14 +6,17 @@
         Title="MainWindow" HorizontalAlignment="Center" VerticalAlignment="Center" Height="800" Width="1200"
         WindowStartupLocation="CenterScreen"
         >
+    <Window.Background>
+        <ImageBrush ImageSource="/Words With Kinect;component/Resources/Blackboard.jpg"/>
+    </Window.Background>
     <Grid>
         <k:KinectSensorChooserUI HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="sensorChooserUi"/>
         <k:KinectRegion x:Name="kinectRegion" Margin="0,0,10,0" Unloaded="kinectRegion_Unloaded">
             <Grid>
-                <Label Content="Words With Kinect" HorizontalAlignment="Left" Margin="290,143,0,0" VerticalAlignment="Top" FontSize="72"/>
-
-                
-                <k:KinectTileButton Content="Start" HorizontalAlignment="Left" Margin="458,432,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="48" Click="CustomButton_Click" />
+                <Label Content="Words With Kinect" HorizontalAlignment="Left" Margin="204,147,0,0" VerticalAlignment="Top" FontSize="90" FontFamily="Comic Sans MS" Foreground="WhiteSmoke"/>
+                <k:KinectTileButton Content="Start" HorizontalAlignment="Left" Margin="458,432,0,0" VerticalAlignment="Top" Height="82" Width="292" FontSize="36" Click="CustomButton_Click" Foreground="#FFE3F0F0" />
+                <k:KinectUserViewer VerticalAlignment="Top" HorizontalAlignment="Center" 
+                k:KinectRegion.KinectRegion="{Binding ElementName=kinectRegion}" Height="100" />
             </Grid>
         </k:KinectRegion>
     </Grid>
