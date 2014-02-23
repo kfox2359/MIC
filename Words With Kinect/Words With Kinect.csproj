@@ -90,6 +90,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Memory Game\MemoryCard.cs" />
     <Compile Include="StartupOptions.xaml.cs">
       <DependentUpon>StartupOptions.xaml</DependentUpon>
     </Compile>
@@ -113,11 +114,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MemoryGame.xaml">
+    <Page Include="Memory Game\MemoryGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MemoryGameScreen.xaml">
+    <Page Include="Memory Game\MemoryGameScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -127,10 +128,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MemoryGame.xaml.cs">
+    <Compile Include="Memory Game\MemoryGame.xaml.cs">
       <DependentUpon>MemoryGame.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MemoryGameScreen.xaml.cs">
+    <Compile Include="Memory Game\MemoryGameScreen.xaml.cs">
       <DependentUpon>MemoryGameScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">

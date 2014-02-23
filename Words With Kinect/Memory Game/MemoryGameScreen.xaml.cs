@@ -15,6 +15,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Kinect;
 
+using Words_With_Kinect.Memory_Game;
+using System.Collections;
+
 namespace Words_With_Kinect
 {
     /// <summary>
@@ -24,13 +27,15 @@ namespace Words_With_Kinect
     {
         private KinectSensor kinect;
         private MainWindow window;
-   
+        private ArrayList cards;
+
         public MemoryGameScreen(MainWindow window,KinectSensor kinect)
         {
             this.kinect = kinect;
             this.window = window;
             InitializeComponent();
             this.kinectRegion.KinectSensor = kinect;
+            LoadCards();
         }
 
         private void CustomButton_Click(object sender, RoutedEventArgs e)
@@ -40,7 +45,12 @@ namespace Words_With_Kinect
 
         private void KinectTileButton_Click(object sender, RoutedEventArgs e)
         {
-           
+
+        }
+
+        private void LoadCards()
+        {
+            //cards.Add(new MemoryCard(R3C1Btn,R3C1Img,0));
         }
     }
 }
