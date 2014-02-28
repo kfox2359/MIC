@@ -16,6 +16,7 @@ namespace Words_With_Kinect.Memory_Game
         
         
         private bool _flipped=false;
+        private bool _disabled = false;
        // private static readonly bool _IsInDesignMode = DesignerProperties.GetIsInDesignMode(new DependencyObject());
 
         public static readonly DependencyProperty WordProperty = DependencyProperty.Register
@@ -51,7 +52,17 @@ namespace Words_With_Kinect.Memory_Game
                 SetValue(WordProperty, value);
             }
         }
-
+        public bool Disabled
+        {
+            get
+            {
+                return _disabled;
+            }
+            set
+            {
+                _disabled = value;
+            }
+        }
         public bool LongA
         {
             get
@@ -66,19 +77,22 @@ namespace Words_With_Kinect.Memory_Game
 
         public void Flip()
         {
-            
-            //Change the state
-            if (_flipped == false)
+            if (!_disabled)
             {
-                _flipped = true;
-                WordState();
+                 //Change the state
+                 if (_flipped == false)
+                {
+                     _flipped = true;
+                     WordState();
+                }
+                else
+                {
+                    _flipped = false;
+                    WordState();
+                }
+                ChangeBackground();
             }
-            else
-            {
-                _flipped = false;
-                WordState();
-            }
-            ChangeBackground();
+
 
         }
         /// <summary>
