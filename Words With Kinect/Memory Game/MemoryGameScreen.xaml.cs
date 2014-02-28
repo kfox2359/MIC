@@ -151,7 +151,7 @@ namespace Words_With_Kinect
                 else
                 {
                     DispatcherTimer timer = new DispatcherTimer();
-                    timer.Interval = TimeSpan.FromSeconds(1);
+                    timer.Interval = TimeSpan.FromSeconds(.25);
                     timer.Tick += new EventHandler(LoseFlip);
                     timer.Start();
                 }
