@@ -15,7 +15,7 @@
             <Label Content="WordSort" VerticalAlignment="Top" HorizontalAlignment="Center" Width="356" Height="98" FontSize="72" Foreground="#FFF7EDED" FontFamily="Comic Sans MS" Margin="422,140,422,0"/>
             <TextBlock Margin="264,303,264,239" TextWrapping="Wrap" Text="Sort the words into the column that matches it's sound." Height="258" FontSize="48" Foreground="#FFFBF5F5"/>
 
-            <k:KinectTileButton Content="Start" Height="68" Width="290" FontSize="36" Foreground="#FFF1F7F7" Margin="455,566,455,166"/>
+            <k:KinectTileButton Content="Start" Height="68" Width="290" FontSize="36" Foreground="#FFF1F7F7" Margin="455,566,455,166" Click="Start"/>
             <k:KinectTileButton Content="Back" Margin="83,682,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" FontSize="36" Click="Back" Width="213" Foreground="#FFF1F7F7"/>
 
         </Grid>

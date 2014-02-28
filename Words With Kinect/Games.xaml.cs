@@ -37,5 +37,10 @@ namespace Words_With_Kinect
         {
             this.window.Content = new MemoryGame(this.window,kinect);
         }
+
+        private void WordSortClick(object sender, RoutedEventArgs e)
+        {
+            window.Content = new Word_Sort_Game.WordSort(window, kinect);
+        }
     }
 }
