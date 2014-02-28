@@ -94,6 +94,12 @@
     <Compile Include="StartupOptions.xaml.cs">
       <DependentUpon>StartupOptions.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Word Sort Game\WordSort.xaml.cs">
+      <DependentUpon>WordSort.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Word Sort Game\WordSortGameScreen.xaml.cs">
+      <DependentUpon>WordSortGameScreen.xaml</DependentUpon>
+    </Compile>
     <Page Include="Games.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,6 +129,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StartupOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Word Sort Game\WordSort.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Word Sort Game\WordSortGameScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

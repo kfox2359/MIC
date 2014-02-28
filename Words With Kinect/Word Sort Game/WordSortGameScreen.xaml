@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Words_With_Kinect.Word_Sort_Game.WordSortGameScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:k="http://schemas.microsoft.com/kinect/2013"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1200">
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Words With Kinect;component/Resources/Blackboard.jpg"/>
+    </UserControl.Background>
+    <k:KinectRegion x:Name="kinectRegion">
+        <Grid>
+            <Canvas>
+                <k:KinectTileButton Content="Back" Margin="83,682,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" FontSize="36" Click="Back" Width="213" Foreground="#FFF1F7F7"/>
+            </Canvas>
+            <GroupBox Header="Short-a" HorizontalAlignment="Left" VerticalAlignment="Top" Height="483" Width="310" Margin="100,46,0,0" FontSize="36" FontFamily="Comic Sans MS" Foreground="#FFF1F7F7"/>
+            <GroupBox Header="Long-a" HorizontalAlignment="Left" VerticalAlignment="Top" Height="483" Width="310" Margin="468,46,0,0" FontSize="36" FontFamily="Comic Sans MS" Foreground="#FFF1F7F7"/>
+            <GroupBox Header="Oddball" HorizontalAlignment="Left" VerticalAlignment="Top" Height="483" Width="310" Margin="834,46,0,0" FontSize="36" FontFamily="Comic Sans MS" Foreground="#FFF1F7F7"/>
+
+            <k:KinectCircleButton Width="204" Height="206" VerticalAlignment="Bottom" Margin="354,0,642,10"></k:KinectCircleButton>
+        </Grid>
+    </k:KinectRegion>
+</UserControl>
