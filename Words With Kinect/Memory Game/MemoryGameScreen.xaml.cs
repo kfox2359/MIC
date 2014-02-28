@@ -28,13 +28,6 @@ namespace Words_With_Kinect
     {
         private KinectSensor kinect;
         private MainWindow window;
-        private KinectTileButton firstBtn;
-        private KinectTileButton secondBtn;
-        private Image firstImg;
-        private Image secondImg;
-        private string firstImgName;
-        private string secondImgName;
-        private bool selected = false;
 
         public MemoryGameScreen(MainWindow window,KinectSensor kinect)
         {
@@ -42,7 +35,6 @@ namespace Words_With_Kinect
             this.window = window;
             InitializeComponent();
             this.kinectRegion.KinectSensor = kinect;
-            Init();
         }
 
         private void CustomButton_Click(object sender, RoutedEventArgs e)
@@ -50,80 +42,68 @@ namespace Words_With_Kinect
             this.window.Content = new MemoryGame(this.window,this.kinect);
         }
 
-        private bool IsWinner()
+        //Row 1
+        private void r1c1_Click(object sender, RoutedEventArgs e)
         {
-            
-            return firstImgName == secondImgName;
+            r1c1.Flip();
         }
 
-        private void ProcessMatch(bool winner)
+        private void r1c2_Click(object sender, RoutedEventArgs e)
         {
-            if(!winner)
-            {
-                firstBtn.Visibility = Visibility.Visible;
-                firstImg.Visibility = Visibility.Hidden;
-                secondBtn.Visibility = Visibility.Visible;
-                secondImg.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-               int temp = Convert.ToInt32(Score.Text);
-               temp += 10;
-               Score.Text = "" + temp;
-            }
-        }
-        private void Init()
-        {
-            R3C1Img.Visibility = Visibility.Hidden;
-            R2C1Img.Visibility = Visibility.Hidden;
+            r1c2.Flip();
         }
 
-        /* Ball */
-        private void R2C1Btn_Click(object sender, RoutedEventArgs e)
+        private void r1c3_Click(object sender, RoutedEventArgs e)
         {
-            if (selected == false)
-            {
-                R2C1Btn.Visibility = Visibility.Hidden;
-                R2C1Img.Visibility = Visibility.Visible;
-                firstBtn = R2C1Btn;
-                firstImg = R2C1Img;
-                firstImgName = "Ball";
-                selected = true;
-            }
-            else
-            {
-                R2C1Btn.Visibility = Visibility.Hidden;
-                R2C1Img.Visibility = Visibility.Visible;
-                secondBtn = R2C1Btn;
-                secondImg = R2C1Img;
-                secondImgName = "Ball";
-                selected = false;
-                ProcessMatch(IsWinner());
-            }
+            r1c3.Flip();
         }
-        /* Ball */
-        private void R3C1Btn_Click(object sender, RoutedEventArgs e)
-        {
-            if (selected == false)
-            {
-                R3C1Btn.Visibility = Visibility.Hidden;
-                R3C1Img.Visibility = Visibility.Visible;
-                firstBtn = R3C1Btn;
-                firstImg = R3C1Img;
-                firstImgName = "Ball";
-                selected = true;
-            }
-            else
-            {
-                R3C1Btn.Visibility = Visibility.Hidden;
-                R3C1Img.Visibility = Visibility.Visible;
-                secondBtn = R3C1Btn;
-                secondImg = R3C1Img;
-                secondImgName = "Ball";
-                selected = false;
-                ProcessMatch(IsWinner());
-            }
 
+        private void r1c4_Click(object sender, RoutedEventArgs e)
+        {
+            r1c4.Flip();
         }
+        //Row 2
+        private void r2c1_Click(object sender, RoutedEventArgs e)
+        {
+            r2c1.Flip();
+        }
+
+        private void r2c2_Click(object sender, RoutedEventArgs e)
+        {
+            r2c2.Flip();
+        }
+
+        private void r2c3_Click(object sender, RoutedEventArgs e)
+        {
+            r2c3.Flip();
+        }
+
+        private void r2c4_Click(object sender, RoutedEventArgs e)
+        {
+            r2c4.Flip();
+        }
+        //Row 3
+        private void r3c1_Click(object sender, RoutedEventArgs e)
+        {
+            r3c1.Flip();
+        }
+
+        private void r3c2_Click(object sender, RoutedEventArgs e)
+        {
+            r3c2.Flip();
+        }
+
+        private void r3c3_Click(object sender, RoutedEventArgs e)
+        {
+            r3c3.Flip();
+        }
+
+        private void r3c4_Click(object sender, RoutedEventArgs e)
+        {
+            r3c4.Flip();
+        }
+
+
+
     }
 }

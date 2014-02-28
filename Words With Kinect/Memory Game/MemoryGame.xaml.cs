@@ -40,8 +40,6 @@ namespace Words_With_Kinect
         /// <param name="e"></param>
         private void CustomButton_Click(object sender, RoutedEventArgs e)
         {
-            kinectRegion.KinectSensor = null;
-            Task.Delay(2000);
             this.window.Content = new MemoryGameScreen(this.window,kinect);
         }
 
