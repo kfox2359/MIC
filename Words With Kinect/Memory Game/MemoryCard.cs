@@ -14,7 +14,6 @@ namespace Words_With_Kinect.Memory_Game
     public class MemoryCard : KinectTileButton
     {
         
-        //mario
         private bool _flipped=false;
         private bool _disabled = false;
        // private static readonly bool _IsInDesignMode = DesignerProperties.GetIsInDesignMode(new DependencyObject());
