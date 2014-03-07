@@ -1,0 +1,28 @@
+﻿<UserControl 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:k="http://schemas.microsoft.com/kinect/2013"
+             xmlns:local="clr-namespace:Words_With_Kinect.Matching_Game" 
+            x:Class="Words_With_Kinect.MatchingGameScreen"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1200" 
+        >
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Words With Kinect;component/Resources/Blackboard.jpg"/>
+    </UserControl.Background>
+    <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0">
+        <Grid>
+            <k:KinectTileButton Content="Back" Margin="76,682,939,0" VerticalAlignment="Top" Height="62" FontSize="36" Width="Auto" Foreground="#FFEDF7F7"/>
+            <Image HorizontalAlignment="Left" Height="141" Margin="169,56,0,0" VerticalAlignment="Top" Width="166" Source="/Words With Kinect;component/Resources/train.jpg" Stretch="Fill"/>
+            <Image x:Name="c" HorizontalAlignment="Left" Height="155" Margin="902,42,0,0" VerticalAlignment="Top" Width="164" Source="/Words With Kinect;component/Resources/cake.jpg" Stretch="Fill"/>
+            <Image HorizontalAlignment="Left" Height="100" Margin="445,372,0,0" VerticalAlignment="Top" Width="100"/>
+            <Image HorizontalAlignment="Left" Height="153" Margin="902,236,0,0" VerticalAlignment="Top" Width="161" Source="/Words With Kinect;component/Resources/cat.jpg" Stretch="Fill"/>
+            <Image HorizontalAlignment="Left" Height="146" Margin="169,236,0,0" VerticalAlignment="Top" Width="166" Source="/Words With Kinect;component/Resources/hat.jpg" Stretch="Fill"/>
+            <Image HorizontalAlignment="Left" Height="163" Margin="169,435,0,0" VerticalAlignment="Top" Width="166" Source="/Words With Kinect;component/Resources/dog.jpg" Stretch="Fill"/>
+            <Image HorizontalAlignment="Left" Height="163" Margin="902,435,0,0" VerticalAlignment="Top" Width="161" Source="/Words With Kinect;component/Resources/tree.jpg" Stretch="Fill"/>
+
+        </Grid>
+    </k:KinectRegion>
+</UserControl>
