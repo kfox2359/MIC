@@ -98,6 +98,7 @@
     <Compile Include="StartupOptions.xaml.cs">
       <DependentUpon>StartupOptions.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Word Sort Game\DragButton.cs" />
     <Compile Include="Word Sort Game\WordSort.xaml.cs">
       <DependentUpon>WordSort.xaml</DependentUpon>
     </Compile>
