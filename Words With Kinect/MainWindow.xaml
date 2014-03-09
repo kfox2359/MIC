@@ -4,7 +4,7 @@
         xmlns:k="http://schemas.microsoft.com/kinect/2013"
         xmlns:local="clr-namespace:Words_With_Kinect" x:Class="Words_With_Kinect.MainWindow"
         Title="Words With Kinect" HorizontalAlignment="Center" VerticalAlignment="Center" Height="800" Width="1200"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
         >
     <Window.Background>
         <ImageBrush ImageSource="/Words With Kinect;component/Resources/Blackboard.jpg"/>
