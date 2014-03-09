@@ -27,6 +27,8 @@
             <local:MemoryCard x:Name="r1c4"  Margin="874,84,116,0" Word="cat" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r1c4_Click"/>
             <local:MemoryCard x:Name="r2c4"  Margin="874,264,116,0" Word="cat" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r2c4_Click"/>
             <local:MemoryCard x:Name="r3c4"  Margin="874,446,116,0" Word="cat" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r3c4_Click"/>
+            <Label Content="Score:" HorizontalAlignment="Left" Margin="43,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="ScoreLabel" Content=" " HorizontalAlignment="Left" Margin="112,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
 
         </Grid>
     </k:KinectRegion>

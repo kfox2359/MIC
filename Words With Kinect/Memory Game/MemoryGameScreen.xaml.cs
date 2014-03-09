@@ -33,6 +33,7 @@ namespace Words_With_Kinect
         private bool _flipped = false;
         private MemoryCard _first;
         private MemoryCard _second;
+        private int _score=0;
 
         public MemoryGameScreen(MainWindow window,KinectSensor kinect)
         {
@@ -151,17 +152,23 @@ namespace Words_With_Kinect
                 else
                 {
                     DispatcherTimer timer = new DispatcherTimer();
-                    timer.Interval = TimeSpan.FromSeconds(.25);
+                    timer.Interval = TimeSpan.FromSeconds(.5);
                     timer.Tick += new EventHandler(LoseFlip);
                     timer.Start();
+                    ProcessLoss();
                 }
             }
 
         }
-
+        private void ProcessLoss()
+        {
+            _score -= 4;
+            ScoreLabel.Content = "" + _score;
+        }
         private void ProcessWin()
         {
-            //Update the score
+            _score += 10;
+            ScoreLabel.Content = "" + _score;
         }
 
         private void LoseFlip(Object sender, EventArgs args)
