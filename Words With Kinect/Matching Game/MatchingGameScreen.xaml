@@ -15,12 +15,12 @@
     <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0">
         <Grid>
             <k:KinectTileButton Content="Back" Margin="76,682,939,0" VerticalAlignment="Top" Height="62" FontSize="36" Width="Auto" Foreground="#FFEDF7F7"/>
-            <Image HorizontalAlignment="Left" Height="141" Margin="169,56,0,0" VerticalAlignment="Top" Width="166" Source="/Words With Kinect;component/Resources/train.jpg" Stretch="Fill"/>
+            <Image HorizontalAlignment="Left" Height="141" Margin="169,248,0,0" VerticalAlignment="Top" Width="166" Source="/Words With Kinect;component/Resources/train.jpg" Stretch="Fill"/>
             <Image x:Name="c" HorizontalAlignment="Left" Height="155" Margin="902,42,0,0" VerticalAlignment="Top" Width="164" Source="/Words With Kinect;component/Resources/cake.jpg" Stretch="Fill"/>
             <Image HorizontalAlignment="Left" Height="100" Margin="445,372,0,0" VerticalAlignment="Top" Width="100"/>
             <Image HorizontalAlignment="Left" Height="153" Margin="902,236,0,0" VerticalAlignment="Top" Width="161" Source="/Words With Kinect;component/Resources/cat.jpg" Stretch="Fill"/>
-            <Image HorizontalAlignment="Left" Height="146" Margin="169,236,0,0" VerticalAlignment="Top" Width="166" Source="/Words With Kinect;component/Resources/hat.jpg" Stretch="Fill"/>
-            <Image HorizontalAlignment="Left" Height="163" Margin="169,435,0,0" VerticalAlignment="Top" Width="166" Source="/Words With Kinect;component/Resources/dog.jpg" Stretch="Fill"/>
+            <Image HorizontalAlignment="Left" Height="146" Margin="169,435,0,0" VerticalAlignment="Top" Width="166" Source="/Words With Kinect;component/Resources/hat.jpg" Stretch="Fill"/>
+            <Image HorizontalAlignment="Left" Height="163" Margin="169,42,0,0" VerticalAlignment="Top" Width="166" Source="/Words With Kinect;component/Resources/dog.jpg" Stretch="Fill"/>
             <Image HorizontalAlignment="Left" Height="163" Margin="902,435,0,0" VerticalAlignment="Top" Width="161" Source="/Words With Kinect;component/Resources/tree.jpg" Stretch="Fill"/>
 
         </Grid>
