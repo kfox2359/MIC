@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Words_With_Kinect.Spelling_Game;
 
 namespace Words_With_Kinect
 {
@@ -128,6 +129,11 @@ namespace Words_With_Kinect
         private void kinectRegion_Unloaded(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Content = new SpellingGameScreen(this, sensorChooser.Kinect);
         }
     }
 }

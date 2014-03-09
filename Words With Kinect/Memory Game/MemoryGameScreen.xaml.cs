@@ -155,11 +155,16 @@ namespace Words_With_Kinect
                     timer.Interval = TimeSpan.FromSeconds(.5);
                     timer.Tick += new EventHandler(LoseFlip);
                     timer.Start();
+                    ProcessLoss();
                 }
             }
 
         }
-
+        private void ProcessLoss()
+        {
+            _score -= 4;
+            ScoreLabel.Content = "" + _score;
+        }
         private void ProcessWin()
         {
             _score += 10;
