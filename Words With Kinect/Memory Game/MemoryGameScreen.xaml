@@ -15,20 +15,22 @@
     <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0">
         <Grid>
             <k:KinectTileButton Content="Back" Margin="76,682,939,0" VerticalAlignment="Top" Height="62" FontSize="36" Click="CustomButton_Click" Width="Auto" Foreground="#FFEDF7F7"/>
-            <local:MemoryCard x:Name="r1c1"  Margin="94,84,896,0" Word="cat" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Click="r1c1_Click" Background="#FFB61C0D"/>
-            <local:MemoryCard x:Name="r2c1"  Margin="94,264,896,0" Word="ball" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r2c1_Click"/>
+            <local:MemoryCard x:Name="r1c1"  Margin="94,84,896,0" Word="bad" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Click="r1c1_Click" Background="#FFB61C0D"/>
+            <local:MemoryCard x:Name="r2c1"  Margin="94,264,896,0" Word="mad" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r2c1_Click"/>
             <local:MemoryCard x:Name="r3c1"  Margin="94,446,896,0" Word="bake" LongA="true" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r3c1_Click"/>
             <local:MemoryCard x:Name="r1c2"  Margin="352,84,638,0" Word="cake" LongA="true" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r1c2_Click"/>
             <local:MemoryCard x:Name="r2c2"  Margin="352,264,638,0" Word="make" LongA="true" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r2c2_Click"/>
             <local:MemoryCard x:Name="r3c2"  Margin="352,446,638,0" Word="game" LongA="true" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r3c2_Click"/>
             <local:MemoryCard x:Name="r1c3"  Margin="612,84,378,0" Word="blame" LongA="true" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r1c3_Click"/>
-            <local:MemoryCard x:Name="r2c3"  Margin="612,264,378,0" Word="cat" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r2c3_Click"/>
+            <local:MemoryCard x:Name="r2c3"  Margin="612,264,378,0" Word="bat" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r2c3_Click"/>
             <local:MemoryCard x:Name="r3c3"  Margin="612,446,378,0" Word="cat" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r3c3_Click"/>
-            <local:MemoryCard x:Name="r1c4"  Margin="874,84,116,0" Word="cat" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r1c4_Click"/>
-            <local:MemoryCard x:Name="r2c4"  Margin="874,264,116,0" Word="cat" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r2c4_Click"/>
-            <local:MemoryCard x:Name="r3c4"  Margin="874,446,116,0" Word="cat" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r3c4_Click"/>
+            <local:MemoryCard x:Name="r1c4"  Margin="874,84,116,0" Word="sat" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r1c4_Click"/>
+            <local:MemoryCard x:Name="r2c4"  Margin="874,264,116,0" Word="jam" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r2c4_Click"/>
+            <local:MemoryCard x:Name="r3c4"  Margin="874,446,116,0" Word="mate" LongA="true" VerticalAlignment="Top" Height="150" FontSize="36" Width="Auto" Background="#FFB61C0D" Click="r3c4_Click"/>
             <Label Content="Score:" HorizontalAlignment="Left" Margin="43,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
             <Label x:Name="ScoreLabel" Content=" " HorizontalAlignment="Left" Margin="112,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="TimeWord" Content="Time:" HorizontalAlignment="Left" Margin="493,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="TimeLabel" Content=" " HorizontalAlignment="Left" Margin="559,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
 
         </Grid>
     </k:KinectRegion>

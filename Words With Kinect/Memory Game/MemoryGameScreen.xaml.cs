@@ -34,13 +34,38 @@ namespace Words_With_Kinect
         private MemoryCard _first;
         private MemoryCard _second;
         private int _score=0;
+        private int time = 60;
 
-        public MemoryGameScreen(MainWindow window,KinectSensor kinect)
+        public MemoryGameScreen(MainWindow window,KinectSensor kinect, bool timed)
         {
             this.kinect = kinect;
             this.window = window;
             InitializeComponent();
             this.kinectRegion.KinectSensor = kinect;
+            if (timed)
+            {
+                DispatcherTimer timer = new DispatcherTimer();
+                timer.Interval = TimeSpan.FromSeconds(1);
+                timer.Tick += new EventHandler(CountDown);
+                timer.Start();
+            }
+            else
+            {
+                TimeWord.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void CountDown(Object sender, EventArgs args)
+        {
+            time--;
+            if (time == 0)
+            {
+                DispatcherTimer thisTimer = (DispatcherTimer)sender;
+                thisTimer.Stop();
+            }
+
+
+            TimeLabel.Content = "" + time;
         }
 
         private void CustomButton_Click(object sender, RoutedEventArgs e)
