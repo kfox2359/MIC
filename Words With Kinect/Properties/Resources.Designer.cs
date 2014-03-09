@@ -79,5 +79,44 @@ namespace Words_With_Kinect.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] cat {
+            get {
+                object obj = ResourceManager.GetObject("cat", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] cat_def {
+            get {
+                object obj = ResourceManager.GetObject("cat_def", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;grammer version=&quot;1.0&quot; xml:lang=&quot;en-us&quot; root =&quot;a&quot; xmlns=&quot;http://www.w3.org/2001/06/grammer&quot;&gt;
+        ///  &lt;rule id=&quot;a&quot;&gt;
+        ///    &lt;item&gt;a&lt;/item&gt;
+        ///  &lt;/rule&gt;  
+        ///  &lt;rule id=&quot;b&quot;&gt;
+        ///    &lt;item&gt;b&lt;/item&gt;
+        ///  &lt;/rule&gt;  
+        ///  &lt;rule id=&quot;c&quot;&gt;
+        ///    &lt;item&gt;c&lt;/item&gt;
+        ///  &lt;/rule&gt;  
+        ///&lt;/grammer&gt;.
+        /// </summary>
+        public static string SpeechGrammer {
+            get {
+                return ResourceManager.GetString("SpeechGrammer", resourceCulture);
+            }
+        }
     }
 }

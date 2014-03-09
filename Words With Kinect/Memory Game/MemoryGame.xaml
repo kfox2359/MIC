@@ -14,11 +14,12 @@
     <Grid>
         <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0">
             <Grid>
-                <Label Content="Memory" HorizontalAlignment="Left" Margin="455,120,0,0" VerticalAlignment="Top" FontSize="85" Foreground="#FFF7EAEA" FontFamily="Comic Sans MS"/>
-                <TextBlock HorizontalAlignment="Left" Margin="343,294,0,0" TextWrapping="Wrap" Text="Select a block to flip it over. Find two of the same to score a point. Good Luck!" VerticalAlignment="Top" Height="258" Width="572" FontSize="48" Foreground="#FFFBF5F5"/>
+                <Label Content="Memory"  Margin="447,161,412,0" VerticalAlignment="Top" FontSize="85" Foreground="#FFF7EAEA" FontFamily="Comic Sans MS"/>
+                <TextBlock  Margin="338,294,290,0" TextWrapping="Wrap" Text="Select a block to flip it over. Find two blocks that have the same sound and win points. Good Luck!" VerticalAlignment="Top" Height="258" Width="572" FontSize="48" Foreground="#FFFBF5F5"/>
 
-                <k:KinectTileButton Content="Start" HorizontalAlignment="Left" Margin="455,604,0,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="36" Click="CustomButton_Click" Foreground="#FFF1F7F7"/>
-                <k:KinectTileButton Content="Back" Margin="83,682,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" FontSize="36" Click="CustomButton_Click_1" Width="213" Foreground="#FFF1F7F7"/>
+                <k:KinectTileButton Content="Start"  Margin="472,604,438,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="36" Click="CustomButton_Click" Foreground="#FFF1F7F7"/>
+                <k:KinectTileButton Content="Back" Margin="65,684,922,0"  VerticalAlignment="Top" Height="62" FontSize="36" Click="CustomButton_Click_1" Width="213" Foreground="#FFF1F7F7"/>
+                <CheckBox x:Name="timedBox" Content="Timed" HorizontalAlignment="Left" Margin="910,643,0,0" VerticalAlignment="Top" Foreground="#FFF7EAEA" FontSize="18" Width="148" Height="29"/>
 
             </Grid>
         </k:KinectRegion>

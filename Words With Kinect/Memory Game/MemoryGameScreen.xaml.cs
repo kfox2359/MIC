@@ -33,13 +33,39 @@ namespace Words_With_Kinect
         private bool _flipped = false;
         private MemoryCard _first;
         private MemoryCard _second;
+        private int _score=0;
+        private int time = 60;
 
-        public MemoryGameScreen(MainWindow window,KinectSensor kinect)
+        public MemoryGameScreen(MainWindow window,KinectSensor kinect, bool timed)
         {
             this.kinect = kinect;
             this.window = window;
             InitializeComponent();
             this.kinectRegion.KinectSensor = kinect;
+            if (timed)
+            {
+                DispatcherTimer timer = new DispatcherTimer();
+                timer.Interval = TimeSpan.FromSeconds(1);
+                timer.Tick += new EventHandler(CountDown);
+                timer.Start();
+            }
+            else
+            {
+                TimeWord.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void CountDown(Object sender, EventArgs args)
+        {
+            time--;
+            if (time == 0)
+            {
+                DispatcherTimer thisTimer = (DispatcherTimer)sender;
+                thisTimer.Stop();
+            }
+
+
+            TimeLabel.Content = "" + time;
         }
 
         private void CustomButton_Click(object sender, RoutedEventArgs e)
@@ -151,17 +177,23 @@ namespace Words_With_Kinect
                 else
                 {
                     DispatcherTimer timer = new DispatcherTimer();
-                    timer.Interval = TimeSpan.FromSeconds(.25);
+                    timer.Interval = TimeSpan.FromSeconds(.5);
                     timer.Tick += new EventHandler(LoseFlip);
                     timer.Start();
+                    ProcessLoss();
                 }
             }
 
         }
-
+        private void ProcessLoss()
+        {
+            _score -= 4;
+            ScoreLabel.Content = "" + _score;
+        }
         private void ProcessWin()
         {
-            //Update the score
+            _score += 10;
+            ScoreLabel.Content = "" + _score;
         }
 
         private void LoseFlip(Object sender, EventArgs args)

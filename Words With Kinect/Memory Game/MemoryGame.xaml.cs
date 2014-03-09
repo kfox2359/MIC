@@ -40,7 +40,8 @@ namespace Words_With_Kinect
         /// <param name="e"></param>
         private void CustomButton_Click(object sender, RoutedEventArgs e)
         {
-            this.window.Content = new MemoryGameScreen(this.window,kinect);
+            bool selected = (bool)timedBox.IsChecked;
+            this.window.Content = new MemoryGameScreen(this.window, kinect, selected);
         }
 
         private void CustomButton_Click_1(object sender, RoutedEventArgs e)

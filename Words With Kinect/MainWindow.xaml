@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:k="http://schemas.microsoft.com/kinect/2013"
         xmlns:local="clr-namespace:Words_With_Kinect" x:Class="Words_With_Kinect.MainWindow"
-        Title="MainWindow" HorizontalAlignment="Center" VerticalAlignment="Center" Height="800" Width="1200"
-        WindowStartupLocation="CenterScreen"
+        Title="Words With Kinect" HorizontalAlignment="Center" VerticalAlignment="Center" Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
         >
     <Window.Background>
         <ImageBrush ImageSource="/Words With Kinect;component/Resources/Blackboard.jpg"/>
@@ -14,9 +14,11 @@
         <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0" Unloaded="kinectRegion_Unloaded">
             <Grid>
                 <Label Content="Words With Kinect" HorizontalAlignment="Left" Margin="204,147,0,0" VerticalAlignment="Top" FontSize="90" FontFamily="Comic Sans MS" Foreground="WhiteSmoke"/>
+                
                 <k:KinectTileButton Content="Start" HorizontalAlignment="Left" Margin="458,432,0,0" VerticalAlignment="Top" Height="82" Width="292" FontSize="36" Click="CustomButton_Click" Foreground="#FFE3F0F0" />
                 <k:KinectUserViewer VerticalAlignment="Top" HorizontalAlignment="Center" 
                 k:KinectRegion.KinectRegion="{Binding ElementName=kinectRegion}" Height="100" />
+                <Button Content="Spelling" HorizontalAlignment="Left" Margin="952,645,0,0" VerticalAlignment="Top" Width="107" Height="48" Click="Button_Click"/>
             </Grid>
         </k:KinectRegion>
     </Grid>

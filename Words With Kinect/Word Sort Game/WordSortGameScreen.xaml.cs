@@ -35,5 +35,29 @@ namespace Words_With_Kinect.Word_Sort_Game
         {
             window.Content = new WordSort(window, kinect);
         }
+        private double columnLeft(String columnType)
+        {
+            if (columnType == "LongA")
+            {
+                return Canvas.GetLeft(LongA_Column);
+            }
+            else if (columnType == "ShortA")
+            {
+                return Canvas.GetLeft(ShortA_Column);
+            }
+            else return Canvas.GetLeft(Oddball_Column);
+        }
+        private double columnTop(String columnType)
+        {
+            if (columnType == "LongA")
+            {
+                return Canvas.GetTop(LongA_Column);
+            }
+            else if (columnType == "ShortA")
+            {
+                return Canvas.GetTop(ShortA_Column);
+            }
+            else return Canvas.GetTop(Oddball_Column);
+        }
     }
 }
