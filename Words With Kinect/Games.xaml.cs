@@ -24,23 +24,29 @@ namespace Words_With_Kinect
     {
         private KinectSensor kinect;
         private MainWindow window;
-        public Games(MainWindow window ,KinectSensor kinect)
+
+        public Games(MainWindow window, KinectSensor kinect)
         {
             this.kinect = kinect;
             this.window = window;
             InitializeComponent();
             kinectRegion.KinectSensor = this.kinect;
-           // InitializeComponent();
+            // InitializeComponent();
         }
 
         private void CustomButton_Click(object sender, RoutedEventArgs e)
         {
-            this.window.Content = new MemoryGame(this.window,kinect);
+            this.window.Content = new MemoryGame(this.window, kinect);
         }
 
         private void WordSortClick(object sender, RoutedEventArgs e)
         {
             window.Content = new Word_Sort_Game.WordSort(window, kinect);
+        }
+
+        private void MatchingGameClick(object sender, RoutedEventArgs e)
+        {
+            window.Content = new MatchingGameInstructions(window, kinect);
         }
     }
 }

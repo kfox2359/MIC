@@ -14,7 +14,7 @@
     </UserControl.Background>
     <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0">
         <Grid>
-            <k:KinectTileButton Content="Back" Margin="76,682,939,0" VerticalAlignment="Top" Height="62" FontSize="36" Width="Auto" Foreground="#FFEDF7F7"/>
+            <k:KinectTileButton Content="Back" Margin="76,682,939,0" VerticalAlignment="Top" Height="62" FontSize="36" Width="Auto" Foreground="#FFEDF7F7" Click="Back"/>
             <Image HorizontalAlignment="Left" Height="141" Margin="169,248,0,0" VerticalAlignment="Top" Width="166" Source="/Words With Kinect;component/Resources/train.jpg" Stretch="Fill"/>
             <Image x:Name="c" HorizontalAlignment="Left" Height="155" Margin="902,42,0,0" VerticalAlignment="Top" Width="164" Source="/Words With Kinect;component/Resources/cake.jpg" Stretch="Fill"/>
             <Image HorizontalAlignment="Left" Height="100" Margin="445,372,0,0" VerticalAlignment="Top" Width="100"/>
@@ -23,6 +23,10 @@
             <Image HorizontalAlignment="Left" Height="163" Margin="169,42,0,0" VerticalAlignment="Top" Width="166" Source="/Words With Kinect;component/Resources/dog.jpg" Stretch="Fill"/>
             <Image HorizontalAlignment="Left" Height="163" Margin="902,435,0,0" VerticalAlignment="Top" Width="161" Source="/Words With Kinect;component/Resources/tree.jpg" Stretch="Fill"/>
 
+            <Label Content="Score:" HorizontalAlignment="Left" Margin="43,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="ScoreLabel" Content=" " HorizontalAlignment="Left" Margin="112,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="TimeWord" Content="Time:" HorizontalAlignment="Left" Margin="493,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="TimeLabel" Content=" " HorizontalAlignment="Left" Margin="563,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
         </Grid>
     </k:KinectRegion>
 </UserControl>
