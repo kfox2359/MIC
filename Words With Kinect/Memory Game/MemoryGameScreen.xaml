@@ -27,10 +27,16 @@
             <local:MemoryCard x:Name="r1c4"  Margin="874,84,116,0" Word="sat" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="210" Background="#FFB61C0D" Click="r1c4_Click"/>
             <local:MemoryCard x:Name="r2c4"  Margin="874,264,116,0" Word="jam" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="210" Background="#FFB61C0D" Click="r2c4_Click"/>
             <local:MemoryCard x:Name="r3c4"  Margin="874,446,116,0" Word="mate" LongA="true" VerticalAlignment="Top" Height="150" FontSize="36" Width="210" Background="#FFB61C0D" Click="r3c4_Click"/>
-            <Label Content="Score:" HorizontalAlignment="Left" Margin="43,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="scoreTop" Content="Score:" HorizontalAlignment="Left" Margin="43,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
             <Label x:Name="ScoreLabel" Content=" " HorizontalAlignment="Left" Margin="112,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
             <Label x:Name="TimeWord" Content="Time:" HorizontalAlignment="Left" Margin="493,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
             <Label x:Name="TimeLabel" Content=" " HorizontalAlignment="Left" Margin="563,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="congradulations" Content="Congradulations"  Margin="410,618,414,0" VerticalAlignment="Top" Height="78" FontSize="48" Foreground="#FF35F30B" Visibility="Hidden"/>
+            <Label x:Name="finalScoreText" Content="Score:"  Margin="410,695,710,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24" Visibility="Hidden"/>
+            <Label x:Name="finalScore" Content="" Margin="490,695,661,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24"/>
+            <Label x:Name="finalTimeText"  Content="Time:"  Margin="410,742,710,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24" Visibility="Hidden"/>
+            <Label x:Name="finalTime" Content=""  Margin="484,743,673,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24"/>
+            <k:KinectTileButton x:Name="playAgain" Content="Play Again?" Margin="612,701,378,0" VerticalAlignment="Top" Height="71" FontSize="36" Click="playAgain_Click" Width="Auto" Foreground="#FFEDF7F7" Visibility="Hidden"/>
 
         </Grid>
     </k:KinectRegion>

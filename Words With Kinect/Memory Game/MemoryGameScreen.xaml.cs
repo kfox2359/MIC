@@ -28,18 +28,22 @@ namespace Words_With_Kinect
     /// </summary>
     public partial class MemoryGameScreen : UserControl
     {
-        private KinectSensor kinect;
-        private MainWindow window;
+        private KinectSensor _kinect;
+        private MainWindow _window;
         private bool _flipped = false;
         private MemoryCard _first;
         private MemoryCard _second;
-        private int _score=0;
-        private int time = 60;
+        private int _score = 0;
+        private int _time = 60;
+        private int _startTime = 60;
+        private int _wins = 0;
+        private bool _timed;
 
         public MemoryGameScreen(MainWindow window,KinectSensor kinect, bool timed)
         {
-            this.kinect = kinect;
-            this.window = window;
+            this._kinect = kinect;
+            this._window = window;
+            _timed = timed;
             InitializeComponent();
             this.kinectRegion.KinectSensor = kinect;
             if (timed)
@@ -57,20 +61,20 @@ namespace Words_With_Kinect
 
         private void CountDown(Object sender, EventArgs args)
         {
-            time--;
-            if (time == 0)
+            _time--;
+            if (_time == 0)
             {
                 DispatcherTimer thisTimer = (DispatcherTimer)sender;
                 thisTimer.Stop();
             }
 
 
-            TimeLabel.Content = "" + time;
+            TimeLabel.Content = "" + _time;
         }
 
         private void CustomButton_Click(object sender, RoutedEventArgs e)
         {
-            this.window.Content = new MemoryGame(this.window,this.kinect);
+            this._window.Content = new MemoryGame(this._window,this._kinect);
         }
 
         #region Memory Card Click Events
@@ -194,6 +198,30 @@ namespace Words_With_Kinect
         {
             _score += 10;
             ScoreLabel.Content = "" + _score;
+            _wins += 1;
+            if (_wins == 6)
+                GameOver();
+        }
+        private void GameOver()
+        {
+            /* Made the scores visible on the bottom of the screen */
+            congradulations.Visibility = Visibility.Visible;
+            finalScore.Visibility = Visibility.Visible;
+            finalScore.Content = _score;
+            finalScoreText.Visibility = Visibility.Visible;
+            if (_timed)
+            {
+                finalTime.Visibility = Visibility.Visible;
+                finalTimeText.Visibility = Visibility.Visible;
+                finalTime.Content = ""+ (_startTime - _time);
+                TimeWord.Visibility = Visibility.Hidden;
+                TimeLabel.Visibility = Visibility.Hidden;
+            }
+
+            /* Hide the scores on the top */
+            scoreTop.Visibility = Visibility.Hidden;
+            ScoreLabel.Visibility = Visibility.Hidden;
+            playAgain.Visibility = Visibility.Visible;
         }
 
         private void LoseFlip(Object sender, EventArgs args)
@@ -240,6 +268,11 @@ namespace Words_With_Kinect
         private bool IsWinner(MemoryCard card1, MemoryCard card2)
         {
             return card1.LongA == card2.LongA;
+        }
+
+        private void playAgain_Click(object sender, RoutedEventArgs e)
+        {
+            _window.Content = new MemoryGame(_window, _kinect);
         }
     }
 }
