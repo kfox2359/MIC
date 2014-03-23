@@ -39,10 +39,12 @@ namespace Words_With_Kinect
         private int _wins = 0;
         private bool _timed;
 
-        public MemoryGameScreen(MainWindow window,KinectSensor kinect, bool timed)
+        public MemoryGameScreen(MainWindow window,KinectSensor kinect, bool timed, int time)
         {
             this._kinect = kinect;
             this._window = window;
+            _time = time;
+            _startTime = time;
             _timed = timed;
             InitializeComponent();
             this.kinectRegion.KinectSensor = kinect;

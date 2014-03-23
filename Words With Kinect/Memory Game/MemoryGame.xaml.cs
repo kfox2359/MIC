@@ -41,12 +41,24 @@ namespace Words_With_Kinect
         private void CustomButton_Click(object sender, RoutedEventArgs e)
         {
             bool selected = (bool)timedBox.IsChecked;
-            this.window.Content = new MemoryGameScreen(this.window, kinect, selected);
+            int sec = 0;
+            try
+            {
+                sec = Convert.ToInt32(seconds.Text);
+            }
+            catch (Exception) { }
+            
+            this.window.Content = new MemoryGameScreen(this.window, kinect, selected,sec);
         }
 
         private void CustomButton_Click_1(object sender, RoutedEventArgs e)
         {
             this.window.Content = new Games(this.window,kinect);
+        }
+
+        private void timedBox_Checked(object sender, RoutedEventArgs e)
+        {
+            seconds.Visibility = Visibility.Visible;
         }
     }
 }

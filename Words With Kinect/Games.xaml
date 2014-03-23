@@ -14,7 +14,7 @@
     </UserControl.Background>
         <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0">
             <Grid>
-                <Label Content="Games"  Margin="511,140,460,0" VerticalAlignment="Top" FontSize="72" Foreground="#FFF7EDED" FontFamily="Comic Sans MS"/>
+                <Label Content="Games"  Margin="519,156,452,0" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="72" Foreground="#FFF7EDED" FontFamily="Comic Sans MS"/>
 
                 <k:KinectTileButton Content="Column Sort"  Margin="458,432,452,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="36" Foreground="#FFF1F7F7" Click="WordSortClick"/>
                 <k:KinectTileButton Content="Matching" Margin="57,432,853,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="36" Foreground="#FFF1F7F7" Click="MatchingGameClick"/>

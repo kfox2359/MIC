@@ -13,7 +13,7 @@
         <k:KinectSensorChooserUI HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="sensorChooserUi"/>
         <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0" Unloaded="kinectRegion_Unloaded">
             <Grid>
-                <Label Content="Words With Kinect" Margin="204,147,169,0" VerticalAlignment="Top" FontSize="90" FontFamily="Comic Sans MS" Foreground="WhiteSmoke"/>
+                <Label Content="Words With Kinect" Margin="204,147,169,0" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="90" FontFamily="Comic Sans MS" Foreground="WhiteSmoke"/>
                 
                 <k:KinectTileButton Content="Start" Margin="470,444,430,0" VerticalAlignment="Top" Height="82" Width="292" FontSize="36" Click="CustomButton_Click" Foreground="#FFE3F0F0" />
                 <k:KinectUserViewer VerticalAlignment="Top" HorizontalAlignment="Center" 
