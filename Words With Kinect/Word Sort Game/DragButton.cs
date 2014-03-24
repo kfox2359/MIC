@@ -53,6 +53,7 @@ namespace Words_With_Kinect.Word_Sort_Game
             KinectRegion.AddQueryInteractionStatusHandler(this, this.OnQueryInteractionStatus);
 
             KinectRegion.SetIsGripTarget(this, true);
+            this.AllowDrop = true;
         }
 
         private void OnQueryInteractionStatus(object sender, QueryInteractionStatusEventArgs e)
@@ -135,24 +136,6 @@ namespace Words_With_Kinect.Word_Sort_Game
             this.isGripped = false;
             e.HandPointer.Capture(null);
             e.Handled = true;
-
-            double top = Canvas.GetTop(this);
-            double left = Canvas.GetLeft(this);
-
-            switch (this.type)
-            {
-                case wordType.LongA:
-                    //double columnTop = Canvas.GetTop()
-                    //can't see columns how to pass? write code in xaml.cs?
-                    break;
-                case wordType.ShortA:
-                    break;
-                case wordType.OddBall:
-                    break;
-                default:
-                    Console.WriteLine("Null or invalid type assigned to this word.");
-                    break;
-            }
         }
     }
 }

@@ -6,20 +6,20 @@
              xmlns:k="http://schemas.microsoft.com/kinect/2013"
              xmlns:local="clr-namespace:Words_With_Kinect.Word_Sort_Game"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1200">
+             d:DesignHeight="800" d:DesignWidth="1490">
     <UserControl.Background>
         <ImageBrush ImageSource="/Words With Kinect;component/Resources/Blackboard.jpg"/>
     </UserControl.Background>
     <k:KinectRegion x:Name="kinectRegion">
         <Grid>
             <Canvas>
-                <k:KinectTileButton Content="Back" Margin="83,682,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" FontSize="36" Click="Back" Width="213" Foreground="#FFF1F7F7"/>
-                <GroupBox Header="Short-a" Name="ShortA_Column" HorizontalAlignment="Left" VerticalAlignment="Top" Height="483" Width="310" Margin="100,46,0,0" FontSize="36" FontFamily="Comic Sans MS" Foreground="#FFF1F7F7"/>
-                <GroupBox Header="Long-a" Name="LongA_Column" HorizontalAlignment="Left" VerticalAlignment="Top" Height="483" Width="310" Margin="468,46,0,0" FontSize="36" FontFamily="Comic Sans MS" Foreground="#FFF1F7F7"/>
-                <GroupBox Header="Oddball" Name="Oddball_Column" HorizontalAlignment="Left" VerticalAlignment="Top" Height="483" Width="310" Margin="834,46,0,0" FontSize="36" FontFamily="Comic Sans MS" Foreground="#FFF1F7F7"/>
-                <local:DragButton Canvas.Left="443" Canvas.Top="716" Height="53" Content="Apple" type="ShortA"/>
-                <local:DragButton Canvas.Left="668" Canvas.Top="716" Height="53" Content="Bake" type="LongA"/>
-                <local:DragButton Canvas.Left="893" Canvas.Top="716" Height="53" Content="They" type="OddBall"/>
+                <k:KinectTileButton Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" FontSize="36" Click="Back" Width="213" Foreground="#FFF1F7F7" Canvas.Left="83" Canvas.Top="681"/>
+                <GroupBox Header="Short-a" Name="ShortA_Column" HorizontalAlignment="Center" VerticalAlignment="Top" Height="483" Width="310" FontSize="36" FontFamily="Comic Sans MS" Foreground="White" BorderBrush="White" Canvas.Left="228" Canvas.Top="46"/>
+                <GroupBox Header="Long-a" Name="LongA_Column" HorizontalAlignment="Center" VerticalAlignment="Top" Height="483" Width="310" FontSize="36" FontFamily="Comic Sans MS" Foreground="White" BorderBrush="White" Canvas.Left="596" Canvas.Top="46"/>
+                <GroupBox Header="Oddball" Name="Oddball_Column" HorizontalAlignment="Center" VerticalAlignment="Top" Height="483" Width="310" FontSize="36" FontFamily="Comic Sans MS" Foreground="White" BorderBrush="White" Canvas.Left="962" Canvas.Top="46"/>
+                <local:DragButton Canvas.Left="443" Canvas.Top="643" Height="84" Content="Apple" type="ShortA" Click="DragButton_Drop"/>
+                <local:DragButton Canvas.Left="668" Canvas.Top="643" Height="84" Content="Bake" type="LongA" Click="DragButton_Drop"/>
+                <local:DragButton Canvas.Left="893" Canvas.Top="643" Height="84" Content="They" type="OddBall" Click="DragButton_Drop"/>
 
             </Canvas>
         </Grid>

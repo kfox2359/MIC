@@ -23,6 +23,8 @@ namespace Words_With_Kinect.Word_Sort_Game
     {
         private KinectSensor kinect;
         private MainWindow window;
+
+        private int numCorrect = 0;
         public WordSortGameScreen(MainWindow window, KinectSensor kinect)
         {
             this.kinect = kinect;
@@ -35,29 +37,170 @@ namespace Words_With_Kinect.Word_Sort_Game
         {
             window.Content = new WordSort(window, kinect);
         }
+
         private double columnLeft(String columnType)
         {
-            if (columnType == "LongA")
+            if (columnType.Equals("LongA"))
             {
                 return Canvas.GetLeft(LongA_Column);
             }
-            else if (columnType == "ShortA")
+            else if (columnType.Equals("ShortA"))
             {
                 return Canvas.GetLeft(ShortA_Column);
             }
             else return Canvas.GetLeft(Oddball_Column);
         }
+
         private double columnTop(String columnType)
         {
-            if (columnType == "LongA")
+            if (columnType.Equals("LongA"))
             {
                 return Canvas.GetTop(LongA_Column);
             }
-            else if (columnType == "ShortA")
+            else if (columnType.Equals("ShortA"))
             {
                 return Canvas.GetTop(ShortA_Column);
             }
             else return Canvas.GetTop(Oddball_Column);
+        }
+
+        private double columnWidth(String columnType)
+        {
+            if (columnType.Equals("LongA"))
+            {
+                return LongA_Column.ActualWidth;
+            }
+            else if (columnType.Equals("ShortA"))
+            {
+                return ShortA_Column.ActualWidth;
+            }
+            else return Oddball_Column.ActualWidth;
+        }
+
+        private double columnHeight(String columnType)
+        {
+            if (columnType.Equals("LongA"))
+            {
+                return LongA_Column.ActualHeight;
+            }
+            else if (columnType.Equals("ShortA"))
+            {
+                return ShortA_Column.ActualHeight;
+            }
+            else return Oddball_Column.ActualHeight;
+        }
+
+        private async void DragButton_Drop(object sender, RoutedEventArgs e)
+        {
+            DragButton button = (DragButton)sender;
+            double top = Canvas.GetTop(button) + button.ActualHeight/2;
+            double left = Canvas.GetLeft(button) + button.ActualWidth/2;
+
+            switch (button.type)
+            {
+                case DragButton.wordType.LongA:
+                    if (isOver("LongA", top, left))
+                    {
+                        LongA_Column.BorderBrush = Brushes.Green;
+                        LongA_Column.Foreground = Brushes.Green;
+                        button.Visibility = Visibility.Hidden;
+                        numCorrect++;
+                        await Task.Delay(1000);
+                        LongA_Column.BorderBrush = Brushes.White;
+                        LongA_Column.Foreground = Brushes.White;
+                    }
+                    else if (isOver("ShortA", top, left))
+                    {
+                        ShortA_Column.BorderBrush = Brushes.Red;
+                        ShortA_Column.Foreground = Brushes.Red;
+                        await Task.Delay(1000);
+                        ShortA_Column.BorderBrush = Brushes.White;
+                        ShortA_Column.Foreground = Brushes.White;
+                    }
+                    else if (isOver("OddBall", top, left))
+                    {
+                        Oddball_Column.BorderBrush = Brushes.Red;
+                        Oddball_Column.Foreground = Brushes.Red;
+                        await Task.Delay(1000);
+                        Oddball_Column.BorderBrush = Brushes.White;
+                        Oddball_Column.Foreground = Brushes.White;
+                    }
+                    break;
+                case DragButton.wordType.ShortA:
+                    if (isOver("LongA", top, left))
+                    {
+                        LongA_Column.BorderBrush = Brushes.Red;
+                        LongA_Column.Foreground = Brushes.Red;
+                        await Task.Delay(1000);
+                        LongA_Column.BorderBrush = Brushes.White;
+                        LongA_Column.Foreground = Brushes.White;
+                    }
+                    else if (isOver("ShortA", top, left))
+                    {
+                        ShortA_Column.BorderBrush = Brushes.Green;
+                        ShortA_Column.Foreground = Brushes.Green;
+                        button.Visibility = Visibility.Hidden;
+                        numCorrect++;
+                        await Task.Delay(1000);
+                        ShortA_Column.BorderBrush = Brushes.White;
+                        ShortA_Column.Foreground = Brushes.White;
+                    }
+                    else if (isOver("OddBall", top, left))
+                    {
+                        Oddball_Column.BorderBrush = Brushes.Red;
+                        Oddball_Column.Foreground = Brushes.Red;
+                        await Task.Delay(1000);
+                        Oddball_Column.BorderBrush = Brushes.White;
+                        Oddball_Column.Foreground = Brushes.White;
+                    }
+                    break;
+                case DragButton.wordType.OddBall:
+                    if (isOver("LongA", top, left))
+                    {
+                        LongA_Column.BorderBrush = Brushes.Red;
+                        LongA_Column.Foreground = Brushes.Red;
+                        await Task.Delay(1000);
+                        LongA_Column.BorderBrush = Brushes.White;
+                        LongA_Column.Foreground = Brushes.White;
+                    }
+                    else if (isOver("ShortA", top, left))
+                    {
+                        ShortA_Column.BorderBrush = Brushes.Red;
+                        ShortA_Column.Foreground = Brushes.Red;
+                        await Task.Delay(1000);
+                        ShortA_Column.BorderBrush = Brushes.White;
+                        ShortA_Column.Foreground = Brushes.White;
+                    }
+                    else if (isOver("OddBall", top, left))
+                    {
+                        Oddball_Column.BorderBrush = Brushes.Green;
+                        Oddball_Column.Foreground = Brushes.Green;
+                        button.Visibility = Visibility.Hidden;
+                        numCorrect++;
+                        await Task.Delay(1000);
+                        Oddball_Column.BorderBrush = Brushes.White;
+                        Oddball_Column.Foreground = Brushes.White;
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Null or invalid type assigned to this word.");
+                    break;
+            }
+            if (numCorrect == 3)
+            {
+                window.Content = new WordSort(window, kinect);
+            }
+        }
+
+        private bool isOver(string columnType, double top, double left)
+        {
+            double colTop = columnTop(columnType);
+            double colLeft = columnLeft(columnType);
+            double colWidth = columnWidth(columnType);
+            double colHeight = columnHeight(columnType);
+
+            if (top >= colTop && top <= (colTop + colHeight) && left >= colLeft && left <= (colLeft + colWidth)) return true;
+            else return false;
         }
     }
 }
