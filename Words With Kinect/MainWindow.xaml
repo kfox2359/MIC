@@ -14,11 +14,16 @@
         <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0" Unloaded="kinectRegion_Unloaded">
             <Grid>
                 <Label Content="Words With Kinect" Margin="204,147,169,0" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="90" FontFamily="Comic Sans MS" Foreground="WhiteSmoke"/>
-                
+
                 <k:KinectTileButton Content="Start" Margin="470,444,430,0" VerticalAlignment="Top" Height="82" Width="292" FontSize="36" Click="CustomButton_Click" Foreground="#FFE3F0F0" />
                 <k:KinectUserViewer VerticalAlignment="Top" HorizontalAlignment="Center" 
                 k:KinectRegion.KinectRegion="{Binding ElementName=kinectRegion}" Height="100" />
-                <Button Content="Spelling" HorizontalAlignment="Left" Margin="952,645,0,0" VerticalAlignment="Top" Width="107" Height="48" Click="Button_Click"/>
+                <Button Content="Spelling" HorizontalAlignment="Left" Margin="1001,685,0,0" VerticalAlignment="Top" Width="107" Height="48" Click="Button_Click"/>
+                <RadioButton x:Name="easyRadio" Content="Easy" HorizontalAlignment="Right" Margin="0,552,269,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFFFF5F5"/>
+                <RadioButton x:Name="mediumRadio" Content="Medium" HorizontalAlignment="Right" Margin="0,503,238,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFFFF5F5"/>
+                <RadioButton x:Name="hardRadio" Content="Hard" HorizontalAlignment="Right" Margin="0,595,265,0" VerticalAlignment="Top" FontSize="18" Foreground="#FFFFF5F5"/>
+                <Label Content="Choose Difficulty" HorizontalAlignment="Right" Margin="0,444,209,0" VerticalAlignment="Top" Foreground="#FFFBF5F5" FontSize="22"/>
+
             </Grid>
         </k:KinectRegion>
     </Grid>
