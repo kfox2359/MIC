@@ -101,6 +101,16 @@ namespace Words_With_Kinect.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap index_card {
+            get {
+                object obj = ResourceManager.GetObject("index_card", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;grammer version=&quot;1.0&quot; xml:lang=&quot;en-us&quot; root =&quot;a&quot; xmlns=&quot;http://www.w3.org/2001/06/grammer&quot;&gt;
         ///  &lt;rule id=&quot;a&quot;&gt;
         ///    &lt;item&gt;a&lt;/item&gt;

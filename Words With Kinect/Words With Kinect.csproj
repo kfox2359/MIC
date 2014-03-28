@@ -113,6 +113,9 @@
     <Compile Include="StartupOptions.xaml.cs">
       <DependentUpon>StartupOptions.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Typing Game\TypingGameInstructions.xaml.cs">
+      <DependentUpon>TypingGameInstructions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Word Sort Game\DragButton.cs" />
     <Compile Include="Word Sort Game\WordSort.xaml.cs">
       <DependentUpon>WordSort.xaml</DependentUpon>
@@ -165,6 +168,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StartupOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Typing Game\TypingGameInstructions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -323,6 +330,11 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\index card.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
