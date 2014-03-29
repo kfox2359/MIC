@@ -11,11 +11,10 @@ using System.Windows.Media;
 
 namespace Words_With_Kinect.Matching_Game
 {
-    public class MatchingObject : KinectCircleButton
+    public class MatchingObject : KinectTileButton
     {
         private bool _selected=false;
         private bool _disabled = false;
-       // private static readonly bool _IsInDesignMode = DesignerProperties.GetIsInDesignMode(new DependencyObject());
 
         public static readonly DependencyProperty WordProperty = DependencyProperty.Register
         (
@@ -28,15 +27,14 @@ namespace Words_With_Kinect.Matching_Game
         public static readonly DependencyProperty LongAProperty = DependencyProperty.Register
         (
              "LongA",
-             typeof(bool),
+             typeof(string),
              typeof(MatchingObject),
-            new PropertyMetadata()
+             new PropertyMetadata(string.Empty)
         );
 
         public MatchingObject()
         {
-            Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFE7F7F7"));
-            FontSize = 48;
+
         }
 
         public string Word
@@ -50,6 +48,7 @@ namespace Words_With_Kinect.Matching_Game
                 SetValue(WordProperty, value);
             }
         }
+
         public bool Disabled
         {
             get
@@ -61,6 +60,7 @@ namespace Words_With_Kinect.Matching_Game
                 _disabled = value;
             }
         }
+
         public bool LongA
         {
             get
@@ -73,7 +73,7 @@ namespace Words_With_Kinect.Matching_Game
             }
         }
 
-        public void Flip()
+        public void Select()
         {
             if (!_disabled)
             {
@@ -91,8 +91,8 @@ namespace Words_With_Kinect.Matching_Game
                // ChangeBackground();
             }
 
-
         }
+        
         
         /// <summary>
         /// Change the visibility of the words
@@ -110,16 +110,13 @@ namespace Words_With_Kinect.Matching_Game
         }
 
         /*
-        private void ChangeBackground()
+        private void highlight()
         {
-            if (_flipped == true)
+            if (_selected == true)
             {
-                Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF131997"));
+                Background =
             }
-            else //Red -- Facedown color
-            {
-                Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFB61C0D"));
-            }
-        }*/
+        }
+        */
     }
 }
