@@ -35,6 +35,9 @@ namespace Words_With_Kinect
         private MatchingObject _second;
         private int _score = 0;
         private int time = 60;
+        private int _startTime = 60;
+        private int _wins = 0;
+        private bool _timed;
 
         public MatchingGameScreen(MainWindow window, KinectSensor kinect)
         {
@@ -45,38 +48,53 @@ namespace Words_With_Kinect
 
         }
 
+        //---------------------BUTTONS---------------------
         private void Back(object sender, RoutedEventArgs e)
         {
             this.window.Content = new MatchingGameInstructions(this.window, this.kinect);
         }
 
-        private void Match1(object sender, RoutedEventArgs e)
+        //Column 1
+        private void r1c1_button(object sender, RoutedEventArgs e)
         {
-            
+            r1c1.Select();
+            CheckWinner(RegisterSelection(r1c1));
         }
 
-        private void Match2(object sender, RoutedEventArgs e)
+        private void r2c1_button(object sender, RoutedEventArgs e)
         {
-
+            r2c1.Select();
+            CheckWinner(RegisterSelection(r2c1));
         }
 
-        private void Match3(object sender, RoutedEventArgs e)
+        private void r3c1_button(object sender, RoutedEventArgs e)
         {
+            r3c1.Select();
+            CheckWinner(RegisterSelection(r3c1));
+        }
 
+        //Column 2
+        private void r1c2_button(object sender, RoutedEventArgs e)
+        {
+            r1c2.Select();
+            CheckWinner(RegisterSelection(r1c2));
+        }
+
+        private void r2c2_button(object sender, RoutedEventArgs e)
+        {
+            r2c2.Select();
+            CheckWinner(RegisterSelection(r2c2));
+        }
+
+        private void r3c2_button(object sender, RoutedEventArgs e)
+        {
+            r3c2.Select();
+            CheckWinner(RegisterSelection(r3c2));
         }
 
 
-        private void WrongMatch(Object sender, EventArgs args)
-        {
-            _first.Select();
-            _second.Select();
-            _first = null;
-            _second = null;
-        }
-
-        /*
-         * Match events
-         */
+        //---------------------Functions---------------------
+        
 
         /// <summary>
         /// Registers when there is a selection and returns if there is a correct match
@@ -101,28 +119,121 @@ namespace Words_With_Kinect
             return false;
         }
 
+
+
+        private void ProcessLoss()
+        {
+            _score -= 4;
+            ScoreLabel.Content = "" + _score;
+        }
+        private void ProcessWin()
+        {
+            _score += 10;
+            ScoreLabel.Content = "" + _score;
+            _wins += 1;
+
+            if (_wins == 6)
+            {
+                //GameOver();
+            }
+                
+        }
+
+
+        private void WrongMatch(Object sender, EventArgs args)
+        {
+            _first.Select();
+            _second.Select();
+            _first = null;
+            _second = null;
+        }
+
         /// <summary>
         /// Returns if the objects selected are correctly matched
         /// </summary>
-        /// <param name="pic1"></param>
-        /// <param name="pic2"></param>
+        /// <param name="x1"></param>
+        /// <param name="x2"></param>
         /// <returns></returns>
-        private bool CorrectMatch(MatchingObject x1, MatchingObject x2)
+        private bool Match(MatchingObject x1, MatchingObject x2)
         {
-            if (x1.LongA.Equals("LongA") && x2.LongA.Equals("LongA"))
+            if (x1.Sort.Equals("LongA") && x2.Sort.Equals("LongA"))
             {
+                // Create a Line
+                Line redLine = new Line();
+                redLine.X1 = 200;
+                redLine.Y1 = 200;
+                redLine.X2 = 400;
+                redLine.Y2 = 400;
+
+                // Create a red Brush
+                SolidColorBrush redBrush = new SolidColorBrush();
+                redBrush.Color = Colors.Red;
+
+                // Set Line's width and color
+                redLine.StrokeThickness = 4;
+                redLine.Stroke = redBrush;
+
                 return true;
             }
-            if (x1.LongA.Equals("ShortA") && x2.LongA.Equals("ShortA"))
+            if (x1.Sort.Equals("ShortA") && x2.Sort.Equals("ShortA"))
             {
+                // Create a Line
+                Line redLine = new Line();
+                redLine.X1 = 200;
+                redLine.Y1 = 200;
+                redLine.X2 = 400;
+                redLine.Y2 = 200;
+
+                // Create a red Brush
+                SolidColorBrush redBrush = new SolidColorBrush();
+                redBrush.Color = Colors.Red;
+
+                // Set Line's width and color
+                redLine.StrokeThickness = 4;
+                redLine.Stroke = redBrush;
                 return true;
             }
-            if (x1.LongA.Equals("Junk") && x2.LongA.Equals("Junk"))
+            if (x1.Sort.Equals("Junk") && x2.Sort.Equals("Junk"))
             {
+                // Create a Line
+                Line redLine = new Line();
+                redLine.X1 = 200;
+                redLine.Y1 = 400;
+                redLine.X2 = 400;
+                redLine.Y2 = 200;
+
+                // Create a red Brush
+                SolidColorBrush redBrush = new SolidColorBrush();
+                redBrush.Color = Colors.Red;
+
+                // Set Line's width and color
+                redLine.StrokeThickness = 4;
+                redLine.Stroke = redBrush;
                 return true;
             }
 
             return false;
+        }
+
+        private void CheckWinner(bool winCon)
+        {
+            if (winCon)
+            {
+                if (Match(_first, _second))
+                {
+                    _first.Disabled = true;
+                    _second.Disabled = true;
+                    ProcessWin();
+                }
+                else
+                {
+                    DispatcherTimer timer = new DispatcherTimer();
+                    timer.Interval = TimeSpan.FromSeconds(.5);
+                    timer.Tick += new EventHandler(WrongMatch);
+                    timer.Start();
+                    ProcessLoss();
+                }
+            }
         }
       
     }
