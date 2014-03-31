@@ -14,12 +14,12 @@
     <Grid>
         <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0">
             <Grid>
-                <Label Content="Memory"  Margin="421,178,438,506" VerticalAlignment="Top" HorizontalAlignment="Center"  FontSize="85" Foreground="#FFF7EAEA" FontFamily="Comic Sans MS"/>
-                <TextBlock  Margin="338,299,290,243" TextWrapping="Wrap" Text="Select a card to flip it over. Find two blocks that have the same sound and win points. Good luck!"  Height="258" Width="572" FontSize="48" Foreground="#FFFBF5F5"/>
-                <k:KinectTileButton Content="Start"  Margin="472,604,438,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="36" Click="CustomButton_Click" Foreground="#FFF1F7F7"/>
-                <k:KinectTileButton Content="Back" Margin="65,684,922,0"  VerticalAlignment="Top" Height="62" FontSize="36" Click="CustomButton_Click_1" Width="213" Foreground="#FFF1F7F7"/>
-                <CheckBox x:Name="timedBox" Content="Timed"  Margin="852,638,222,121"  Foreground="#FFF7EAEA" FontSize="18" Width="126" Height="41" Checked="timedBox_Checked"/>
-                <TextBox x:Name="seconds" Height="23" Margin="852,698,261,0" TextWrapping="Wrap" Text="(Seconds)" VerticalAlignment="Top" Width="87" Visibility="Hidden"/>
+                <Label Content="Memory"  Margin="428,72,445,0" VerticalAlignment="Top" HorizontalAlignment="Center"  FontSize="85" Foreground="#FFF7EAEA" FontFamily="Comic Sans MS"/>
+                <TextBlock  Margin="338,193,290,349" TextWrapping="Wrap" Text="Select a card to flip it over. Find two blocks that have the same sound and win points. Good luck!"  Height="258" Width="572" FontSize="48" Foreground="#FFFBF5F5"/>
+                <k:KinectTileButton Content="Start"  Margin="325,476,275,0" VerticalAlignment="Top" Height="206" Width="600" FontSize="72" Click="CustomButton_Click" Foreground="#FFF1F7F7"/>
+                <k:KinectTileButton Content="Back" Margin="38,670,912,38"   Height="92" FontSize="36" Click="CustomButton_Click_1" Width="250" Foreground="#FFF1F7F7"/>
+                <CheckBox x:Name="timedBox" Content="Timed"  Margin="969,514,105,245"  Foreground="#FFF7EAEA" FontSize="18" Width="126" Height="41" Checked="timedBox_Checked"/>
+                <TextBox x:Name="seconds" Height="23" Margin="989,560,124,0" TextWrapping="Wrap" Text="(Seconds)" VerticalAlignment="Top" Width="87" Visibility="Hidden"/>
             </Grid>
         </k:KinectRegion>
     </Grid>
