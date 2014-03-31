@@ -12,11 +12,11 @@
     </UserControl.Background>
     <k:KinectRegion x:Name="kinectRegion">
         <Grid>
-            <Label Content="WordSort" VerticalAlignment="Top" HorizontalAlignment="Center" Width="356" Height="98" FontSize="72" Foreground="#FFF7EDED" FontFamily="Comic Sans MS" Margin="422,140,422,0"/>
-            <TextBlock Margin="264,303,264,254" TextWrapping="Wrap" Text="Sort the words into the column that matches it's sound." FontSize="48" Foreground="#FFFBF5F5"/>
+            <Label Content="WordSort" VerticalAlignment="Top" HorizontalAlignment="Center" Width="364" Height="117" FontSize="72" Foreground="#FFF7EDED" FontFamily="Comic Sans MS" Margin="383,140,453,0"/>
+            <TextBlock Margin="264,303,264,254" TextWrapping="Wrap" Text="Sort the words into the column that matches its sound." FontSize="48" Foreground="#FFFBF5F5"/>
 
-            <k:KinectTileButton Content="Start" Height="68" Width="290" FontSize="36" Foreground="#FFF1F7F7" Margin="455,556,455,176" Click="Start"/>
-            <k:KinectTileButton Content="Back" Margin="83,682,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" FontSize="36" Click="Back" Width="213" Foreground="#FFF1F7F7"/>
+            <k:KinectTileButton Content="Start" Height="Auto" Width="Auto" FontSize="36" Foreground="#FFF1F7F7" Margin="383,484,383,176" Click="Start"/>
+            <k:KinectTileButton Content="Back" Margin="38,682,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="87" FontSize="36" Click="Back" Width="258" Foreground="#FFF1F7F7"/>
 
         </Grid>
     </k:KinectRegion>
