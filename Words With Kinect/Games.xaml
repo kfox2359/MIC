@@ -12,15 +12,15 @@
     <UserControl.Background>
         <ImageBrush ImageSource="/Words With Kinect;component/Resources/Blackboard.jpg"/>
     </UserControl.Background>
-        <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0">
-            <Grid>
-                <Label Content="Games"  Margin="519,156,452,0" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="72" Foreground="#FFF7EDED" FontFamily="Comic Sans MS"/>
+    <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0">
+        <Grid>
+            <Label Content="Games"  Margin="428,113,441,0" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="100" Foreground="#FFF7EDED" FontFamily="Comic Sans MS" Width="331"/>
 
-                <k:KinectTileButton Content="Column Sort"  Margin="458,432,452,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="36" Foreground="#FFF1F7F7" Click="WordSortClick"/>
-                <k:KinectTileButton Content="Matching" Margin="57,432,853,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="36" Foreground="#FFF1F7F7" Click="MatchingGameClick"/>
-                <k:KinectTileButton Content="Memory" Margin="865,432,45,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="36" Click="CustomButton_Click" Foreground="#FFF1F7F7"/>
-                
-            </Grid>
-        </k:KinectRegion>
+            <k:KinectTileButton Content="Column Sort"  Margin="428,295,422,0" VerticalAlignment="Top" Height="322"  FontSize="48" Foreground="#FFF1F7F7" Click="WordSortClick" Background="#FF0D9B0D" Width="350" Opacity="0.5"/>
+            <k:KinectTileButton Content="Matching" Margin="43,295,807,0" VerticalAlignment="Top" Height="322" Width="350" FontSize="48" Foreground="#FFF1F7F7" Click="MatchingGameClick" Background="#FF552E9C" Opacity="0.5"/>
+            <k:KinectTileButton Content="Memory" Margin="808,295,42,0" VerticalAlignment="Top" Height="322" Width="350" FontSize="48" Click="CustomButton_Click" Foreground="#FFF1F7F7" Background="#FFEA9A0E" Opacity="0.5"/>
+
+        </Grid>
+    </k:KinectRegion>
 
 </UserControl>

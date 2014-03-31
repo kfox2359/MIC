@@ -102,6 +102,9 @@
       <DependentUpon>MatchingGameScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Matching Game\MatchingObject.cs" />
+    <Compile Include="Memory Game\DemoScreen.xaml.cs">
+      <DependentUpon>DemoScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Memory Game\MemoryCard.cs" />
     <Compile Include="Spelling Game\SpeechRec.cs" />
     <Compile Include="Spelling Game\SpellingGame.xaml.cs">
@@ -157,6 +160,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Matching Game\MatchingGameScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Memory Game\DemoScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

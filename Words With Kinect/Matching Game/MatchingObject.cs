@@ -24,9 +24,9 @@ namespace Words_With_Kinect.Matching_Game
             new PropertyMetadata(string.Empty)
         );
 
-        public static readonly DependencyProperty LongAProperty = DependencyProperty.Register
+        public static readonly DependencyProperty SortProperty = DependencyProperty.Register
         (
-             "LongA",
+             "Sort",
              typeof(string),
              typeof(MatchingObject),
              new PropertyMetadata(string.Empty)
@@ -61,15 +61,15 @@ namespace Words_With_Kinect.Matching_Game
             }
         }
 
-        public bool LongA
+        public string Sort
         {
             get
             {
-                return (bool)GetValue(LongAProperty);
+                return (string)GetValue(SortProperty);
             }
             set
             {
-                SetValue(LongAProperty, value);
+                SetValue(SortProperty, value);
             }
         }
 
@@ -88,7 +88,7 @@ namespace Words_With_Kinect.Matching_Game
                     _selected = false;
                     WordState();
                 }
-               // ChangeBackground();
+               //unhighlight
             }
 
         }
@@ -114,7 +114,7 @@ namespace Words_With_Kinect.Matching_Game
         {
             if (_selected == true)
             {
-                Background =
+                
             }
         }
         */
