@@ -26,6 +26,7 @@
                 </local:MatchingObject.Template>
             </local:MatchingObject>
 
+            
             <local:MatchingObject x:Name="r2c2" Click="r2c2_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="849,297,167,360" Content="Cat" Sort="ShortA">
                 <local:MatchingObject.Template>
                     <ControlTemplate>
