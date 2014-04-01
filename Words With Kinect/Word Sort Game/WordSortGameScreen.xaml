@@ -13,7 +13,7 @@
     <k:KinectRegion x:Name="kinectRegion">
         <Grid>
             <Canvas>
-                <k:KinectTileButton Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Height="62" FontSize="36" Click="Back" Width="213" Foreground="#FFF1F7F7" Canvas.Left="83" Canvas.Top="681"/>
+                <k:KinectTileButton Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Height="109" FontSize="36" Click="Back" Width="286" Foreground="#FFF1F7F7" Canvas.Left="10" Canvas.Top="681"/>
                 <GroupBox Header="Short-a" Name="ShortA_Column" HorizontalAlignment="Center" VerticalAlignment="Top" Height="483" Width="310" FontSize="36" FontFamily="Comic Sans MS" Foreground="White" BorderBrush="White" Canvas.Left="228" Canvas.Top="46"/>
                 <GroupBox Header="Long-a" Name="LongA_Column" HorizontalAlignment="Center" VerticalAlignment="Top" Height="483" Width="310" FontSize="36" FontFamily="Comic Sans MS" Foreground="White" BorderBrush="White" Canvas.Left="596" Canvas.Top="46"/>
                 <GroupBox Header="Oddball" Name="Oddball_Column" HorizontalAlignment="Center" VerticalAlignment="Top" Height="483" Width="310" FontSize="36" FontFamily="Comic Sans MS" Foreground="White" BorderBrush="White" Canvas.Left="962" Canvas.Top="46"/>
