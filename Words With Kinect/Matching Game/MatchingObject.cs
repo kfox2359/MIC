@@ -88,7 +88,7 @@ namespace Words_With_Kinect.Matching_Game
                     _selected = false;
                     WordState();
                 }
-               //unhighlight
+                highlight();
             }
 
         }
@@ -109,14 +109,17 @@ namespace Words_With_Kinect.Matching_Game
             }
         }
 
-        /*
+
         private void highlight()
         {
             if (_selected == true)
             {
-                
+                BorderBrush = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF131997"));
+            }
+            else
+            {
+                BorderBrush = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFB61C0D"));
             }
         }
-        */
     }
 }

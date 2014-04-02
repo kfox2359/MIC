@@ -18,7 +18,7 @@
             <k:KinectTileButton Content="Back" Margin="43,710,972,0" VerticalAlignment="Top" Height="62" FontSize="36" Width="185" Foreground="#FFEDF7F7" Click="Back" HorizontalAlignment="Left"/>
 
 
-            <local:MatchingObject x:Name="r3c1" Click="r3c1_button" Height="156" Width="Auto" RenderTransformOrigin="1.08,1.72" Margin="211,487,833,152" Content="Hat" Cursor="None">
+            <local:MatchingObject x:Name="r3c1" Click="r3c1_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="211,487,833,152" Content="Hat" Sort="ShortA">
                 <local:MatchingObject.Template>
                     <ControlTemplate>
                         <Image Source="/Words With Kinect;component/Resources/hat.jpg"></Image>
@@ -26,7 +26,7 @@
                 </local:MatchingObject.Template>
             </local:MatchingObject>
 
-            <local:MatchingObject x:Name="r2c2" Click="r2c2_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="849,297,167,360" Content="Cat" Cursor="None">
+            <local:MatchingObject x:Name="r2c2" Click="r2c2_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="849,297,167,360" Content="Cat" Sort="ShortA">
                 <local:MatchingObject.Template>
                     <ControlTemplate>
                         <Image Source="/Words With Kinect;component/Resources/cat.jpg"></Image>
@@ -35,7 +35,7 @@
             </local:MatchingObject>
 
 
-            <local:MatchingObject x:Name="r2c1" Click="r2c1_button" Height="156" Width="Auto" RenderTransformOrigin="1.08,1.72" Margin="211,297,833,344" Content="Train" Cursor="None">
+            <local:MatchingObject x:Name="r2c1" Click="r2c1_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="211,297,833,344" Content="Train" Sort="LongA">
                 <local:MatchingObject.Template>
                     <ControlTemplate>
                         <Image Source="/Words With Kinect;component/Resources/train.jpg"></Image>
@@ -43,7 +43,7 @@
                 </local:MatchingObject.Template>
             </local:MatchingObject>
 
-            <local:MatchingObject x:Name="r1c2" Click="r1c2_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="849,109,180,548" Content="Cake" Cursor="None">
+            <local:MatchingObject x:Name="r1c2" Click="r1c2_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="849,109,180,548" Content="Cake" Sort="LongA">
                 <local:MatchingObject.Template>
                     <ControlTemplate>
                         <Image Source="/Words With Kinect;component/Resources/cake.jpg"></Image>
@@ -52,7 +52,7 @@
             </local:MatchingObject>
 
 
-            <local:MatchingObject x:Name="r1c1" Click="r1c1_button" Height="156" Width="Auto" RenderTransformOrigin="1.08,1.72" Margin="211,109,833,539" Content="Dog" Cursor="None">
+            <local:MatchingObject x:Name="r1c1" Click="r1c1_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="211,109,833,539" Content="Dog" Sort="Junk">
                 <local:MatchingObject.Template>
                     <ControlTemplate>
                         <Image Source="/Words With Kinect;component/Resources/dog.jpg"></Image>
@@ -60,7 +60,7 @@
                 </local:MatchingObject.Template>
             </local:MatchingObject>
 
-            <local:MatchingObject x:Name="r3c2" Click="r3c2_button" Height="156" Width="155" RenderTransformOrigin="1.08,1.72" Margin="862,487,180,174" Content="Tree" Cursor="None">
+            <local:MatchingObject x:Name="r3c2" Click="r3c2_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="862,487,180,174" Content="Tree" Sort="Junk">
                 <local:MatchingObject.Template>
                     <ControlTemplate>
                         <Image Source="/Words With Kinect;component/Resources/tree.jpg"></Image>
@@ -68,45 +68,17 @@
                 </local:MatchingObject.Template>
             </local:MatchingObject>
 
+            
 
-
-            <Label Content="Score:" HorizontalAlignment="Left" Margin="43,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="scoreTop" Content="Score:" HorizontalAlignment="Left" Margin="43,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
             <Label x:Name="ScoreLabel" Content=" " HorizontalAlignment="Left" Margin="112,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
             <Label x:Name="TimeWord" Content="Time:" HorizontalAlignment="Left" Margin="493,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
             <Label x:Name="TimeLabel" Content=" " HorizontalAlignment="Left" Margin="563,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
-           
-            
-            <Rectangle Fill="#FF11D859" HorizontalAlignment="Left" Height="11" Margin="343,456,0,0" Stroke="Black" VerticalAlignment="Top" Width="561" RenderTransformOrigin="0.5,0.5">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-15.206"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
-            <Rectangle Fill="#FF11D859" HorizontalAlignment="Left" Height="11" Margin="316,383,0,0" Stroke="Black" VerticalAlignment="Top" Width="611" RenderTransformOrigin="0.5,0.5">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="29.676"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
-            <Rectangle Fill="#FF11D859" HorizontalAlignment="Left" Height="11" Margin="349,265,0,0" Stroke="Black" VerticalAlignment="Top" Width="532" RenderTransformOrigin="0.5,0.5">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-15.206"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
-
+            <Label x:Name="congradulations" Content="Congradulations"  Margin="410,618,414,0" VerticalAlignment="Top" Height="78" FontSize="48" Foreground="#FF35F30B" Visibility="Hidden"/>
+            <Label x:Name="finalScoreText" Content="Score:"  Margin="410,695,710,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24" Visibility="Hidden"/>
+            <Label x:Name="finalScore" Content="" Margin="490,695,661,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24"/>
+            <Label x:Name="finalTimeText"  Content="Time:"  Margin="410,742,710,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24" Visibility="Hidden"/>
+            <Label x:Name="finalTime" Content=""  Margin="484,743,673,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24"/>
 
         </Grid>
     </k:KinectRegion>

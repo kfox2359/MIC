@@ -20,7 +20,7 @@
                 <k:KinectTileButton Content="Start"  Margin="472,604,438,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="36" Foreground="#FFF1F7F7" Click="StartButton"/>
                 <k:KinectTileButton Content="Back" Margin="65,684,922,0"  VerticalAlignment="Top" Height="62" FontSize="36" Width="213" Foreground="#FFF1F7F7" Click="BackButton" />
                 <CheckBox x:Name="timedBox" Content="Timed" HorizontalAlignment="Left" Margin="910,643,0,0" VerticalAlignment="Top" Foreground="#FFF7EAEA" FontSize="18" Width="148" Height="29"/>
-
+                <TextBox x:Name="seconds" Height="23" Margin="852,698,261,0" TextWrapping="Wrap" Text="(Seconds)" VerticalAlignment="Top" Width="87" Visibility="Hidden"/>
             </Grid>
         </k:KinectRegion>
     </Grid>
