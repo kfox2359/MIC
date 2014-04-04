@@ -26,7 +26,7 @@
                 </local:MatchingObject.Template>
             </local:MatchingObject>
 
-            
+
             <local:MatchingObject x:Name="r2c2" Click="r2c2_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="849,297,167,360" Content="Cat" Sort="ShortA">
                 <local:MatchingObject.Template>
                     <ControlTemplate>
@@ -69,7 +69,7 @@
                 </local:MatchingObject.Template>
             </local:MatchingObject>
 
-            
+
 
             <Label x:Name="scoreTop" Content="Score:" HorizontalAlignment="Left" Margin="43,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
             <Label x:Name="ScoreLabel" Content=" " HorizontalAlignment="Left" Margin="112,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
@@ -80,6 +80,22 @@
             <Label x:Name="finalScore" Content="" Margin="490,695,661,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24"/>
             <Label x:Name="finalTimeText"  Content="Time:"  Margin="410,742,710,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24" Visibility="Hidden"/>
             <Label x:Name="finalTime" Content=""  Margin="484,743,673,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24"/>
+
+
+
+            <Path Name="line1" Visibility="Hidden" Stroke="#FF3EC50C" StrokeThickness="4" Data="M 300,500 L 200,700" Margin="474.619,209.475,0,0" Stretch="Fill" Height="143" Width="513" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Path Name="line2" Visibility="Hidden" Stroke="#FF3EC50C" StrokeThickness="4" Data="M 600,800 L 200,300" Margin="471.633,244.465,0,0" Stretch="Fill" Width="531" Height="270" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Path Name="line3" Visibility="Hidden" Stroke="#FF3EC50C" StrokeThickness="4" Data="M 400,400 L 400,0" Margin="550.154,695.281,0,-448.09" RenderTransformOrigin="0.132,-1.628" Stretch="Fill" Width="4" Height="552.809" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-0.142"/>
+                        <RotateTransform Angle="72.819"/>
+                        <TranslateTransform X="1313.405" Y="321.096"/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+
 
         </Grid>
     </k:KinectRegion>

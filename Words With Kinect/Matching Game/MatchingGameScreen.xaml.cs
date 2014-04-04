@@ -137,7 +137,7 @@ namespace Words_With_Kinect
             {
                 GameOver();
             }
-                
+
         }
 
         private void GameOver()
@@ -227,95 +227,21 @@ namespace Words_With_Kinect
         {
             if (x1.Sort.Equals("LongA") && x2.Sort.Equals("LongA"))
             {
-                // Create a Line
-                Line redLine = new Line();
-                redLine.X1 = 200;
-                redLine.Y1 = 200;
-                redLine.X2 = 400;
-                redLine.Y2 = 400;
-
-                // Create a red Brush
-                SolidColorBrush redBrush = new SolidColorBrush();
-                redBrush.Color = Colors.Red;
-
-                // Set Line's width and color
-                redLine.StrokeThickness = 4;
-                redLine.Stroke = redBrush;
-
+                line1.Visibility = Visibility.Visible;
                 return true;
             }
             if (x1.Sort.Equals("ShortA") && x2.Sort.Equals("ShortA"))
             {
-                // Create a Line
-                Line redLine = new Line();
-                redLine.X1 = 200;
-                redLine.Y1 = 200;
-                redLine.X2 = 400;
-                redLine.Y2 = 200;
-
-                // Create a red Brush
-                SolidColorBrush redBrush = new SolidColorBrush();
-                redBrush.Color = Colors.Red;
-
-                // Set Line's width and color
-                redLine.StrokeThickness = 4;
-                redLine.Stroke = redBrush;
+                line3.Visibility = Visibility.Visible;
                 return true;
             }
             if (x1.Sort.Equals("Junk") && x2.Sort.Equals("Junk"))
             {
-                // Create a Line
-                Line redLine = new Line();
-                redLine.X1 = 200;
-                redLine.Y1 = 400;
-                redLine.X2 = 400;
-                redLine.Y2 = 200;
-
-                // Create a red Brush
-                SolidColorBrush redBrush = new SolidColorBrush();
-                redBrush.Color = Colors.Red;
-
-                // Set Line's width and color
-                redLine.StrokeThickness = 4;
-                redLine.Stroke = redBrush;
+                line2.Visibility = Visibility.Visible;
                 return true;
             }
 
             return false;
         }
     }
-
-    /*
-     * 
-            <Rectangle Fill="#FF11D859" HorizontalAlignment="Left" Height="11" Margin="343,456,0,0" Stroke="Black" VerticalAlignment="Top" Width="561" RenderTransformOrigin="0.5,0.5">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-15.206"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
-            <Rectangle Fill="#FF11D859" HorizontalAlignment="Left" Height="11" Margin="316,383,0,0" Stroke="Black" VerticalAlignment="Top" Width="611" RenderTransformOrigin="0.5,0.5">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="29.676"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
-            <Rectangle Fill="#FF11D859" HorizontalAlignment="Left" Height="11" Margin="349,265,0,0" Stroke="Black" VerticalAlignment="Top" Width="532" RenderTransformOrigin="0.5,0.5">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-15.206"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
-     */
 }
