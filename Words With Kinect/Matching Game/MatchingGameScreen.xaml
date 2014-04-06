@@ -75,17 +75,17 @@
             <Label x:Name="ScoreLabel" Content=" " HorizontalAlignment="Left" Margin="112,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
             <Label x:Name="TimeWord" Content="Time:" HorizontalAlignment="Left" Margin="493,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
             <Label x:Name="TimeLabel" Content=" " HorizontalAlignment="Left" Margin="563,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
-            <Label x:Name="congradulations" Content="Congradulations"  Margin="410,618,414,0" VerticalAlignment="Top" Height="78" FontSize="48" Foreground="#FF35F30B" Visibility="Hidden"/>
-            <Label x:Name="finalScoreText" Content="Score:"  Margin="410,695,710,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24" Visibility="Hidden"/>
-            <Label x:Name="finalScore" Content="" Margin="490,695,661,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24"/>
-            <Label x:Name="finalTimeText"  Content="Time:"  Margin="410,742,710,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24" Visibility="Hidden"/>
-            <Label x:Name="finalTime" Content=""  Margin="484,743,673,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24"/>
+            <Label x:Name="congradulations" Content="Congratulations! You won!"  Margin="595,648,0,0" VerticalAlignment="Top" Height="78" FontSize="48" Foreground="#FF35F30B" HorizontalAlignment="Left" Visibility="Hidden"/>
+            <Label x:Name="finalScoreText" Content="Score:"  Margin="595,712,0,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24" RenderTransformOrigin="2.412,0.583" HorizontalAlignment="Left" Visibility="Hidden"/>
+            <Label x:Name="finalScore" Content="" Margin="669,712,482,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24"/>
+            <Label x:Name="finalTimeText"  Content="Time:"  Margin="595,752,0,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24" HorizontalAlignment="Left" RenderTransformOrigin="0.507,0.604" Visibility="Hidden"/>
+            <Label x:Name="finalTime" Content=""  Margin="662,752,495,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24"/>
 
 
 
-            <Path Name="line1" Visibility="Hidden" Stroke="#FF3EC50C" StrokeThickness="4" Data="M 300,500 L 200,700" Margin="474.619,209.475,0,0" Stretch="Fill" Height="143" Width="513" HorizontalAlignment="Left" VerticalAlignment="Top" />
-            <Path Name="line2" Visibility="Hidden" Stroke="#FF3EC50C" StrokeThickness="4" Data="M 600,800 L 200,300" Margin="471.633,244.465,0,0" Stretch="Fill" Width="531" Height="270" HorizontalAlignment="Left" VerticalAlignment="Top" />
-            <Path Name="line3" Visibility="Hidden" Stroke="#FF3EC50C" StrokeThickness="4" Data="M 400,400 L 400,0" Margin="550.154,695.281,0,-448.09" RenderTransformOrigin="0.132,-1.628" Stretch="Fill" Width="4" Height="552.809" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <Path Name="line1" Visibility="Hidden" Stroke="#FFFBA207" StrokeThickness="4" Data="M 300,500 L 200,700" Margin="474.619,209.475,0,0" Stretch="Fill" Height="143" Width="513" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Path Name="line2" Visibility="Hidden" Stroke="#FFFBA207" StrokeThickness="4" Data="M 600,800 L 200,300" Margin="471.633,244.465,0,0" Stretch="Fill" Width="531" Height="270" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Path Name="line3" Visibility="Hidden" Stroke="#FFFBA207" StrokeThickness="4" Data="M 400,400 L 400,0" Margin="550.154,695.281,0,-448.09" RenderTransformOrigin="0.132,-1.628" Stretch="Fill" Width="4" Height="552.809" HorizontalAlignment="Left" VerticalAlignment="Top" >
                 <Path.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

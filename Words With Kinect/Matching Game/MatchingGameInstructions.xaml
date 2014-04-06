@@ -14,8 +14,8 @@
     <Grid>
         <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0">
             <Grid>
-                <Label Content="Matching"  Margin="432,161,362,0" VerticalAlignment="Top" FontSize="85" Foreground="#FFF7EAEA" FontFamily="Comic Sans MS"/>
-                <TextBlock  Margin="338,294,290,0" TextWrapping="Wrap" Text="Match a picture on the left with a picture on the right that has the same A sound. Good Luck!" VerticalAlignment="Top" Height="258" Width="572" FontSize="48" Foreground="#FFFBF5F5"/>
+                <Label Content="Matching"  Margin="564,161,0,0" VerticalAlignment="Top" FontSize="85" Foreground="#FFF7EAEA" FontFamily="Comic Sans MS" HorizontalAlignment="Left"/>
+                <TextBlock  Margin="355,330,0,0" TextWrapping="Wrap" Text="Match the picture on the left with a picture on the right that is in the same category: Long A, Short A, or Oddball." VerticalAlignment="Top" Height="243" FontSize="48" Foreground="#FFFBF5F5" HorizontalAlignment="Left" Width="816"/>
 
                 <k:KinectTileButton Content="Start"  Margin="472,604,438,0" VerticalAlignment="Top" Height="68" Width="290" FontSize="36" Foreground="#FFF1F7F7" Click="StartButton"/>
                 <k:KinectTileButton Content="Back" Margin="65,684,922,0"  VerticalAlignment="Top" Height="62" FontSize="36" Width="213" Foreground="#FFF1F7F7" Click="BackButton" />

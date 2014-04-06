@@ -133,7 +133,7 @@ namespace Words_With_Kinect
             ScoreLabel.Content = "" + _score;
             _wins += 1;
 
-            if (_wins == 6)
+            if (_wins == 3)
             {
                 GameOver();
             }
@@ -243,5 +243,6 @@ namespace Words_With_Kinect
 
             return false;
         }
+
     }
 }

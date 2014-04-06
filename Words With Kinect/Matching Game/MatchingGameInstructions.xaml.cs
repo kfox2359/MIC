@@ -41,7 +41,7 @@ namespace Words_With_Kinect
         private void StartButton(object sender, RoutedEventArgs e)
         {
             bool selected = (bool)timedBox.IsChecked;
-            int sec = 0;
+            int sec = 21;
             try
             {
                 sec = Convert.ToInt32(seconds.Text);
