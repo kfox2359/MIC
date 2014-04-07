@@ -4,3 +4,10 @@
     public partial class WordDatabaseDataSet {
     }
 }
+
+namespace Words_With_Kinect.WordDatabaseDataSetTableAdapters {
+    
+    
+    public partial class WordsTableTableAdapter {
+    }
+}

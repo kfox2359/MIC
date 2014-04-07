@@ -16,11 +16,13 @@ namespace Words_With_Kinect.Word_Sort_Game
         private bool isGripped = false;
         public enum wordType{LongA, ShortA, OddBall};
 
-        public DragButton()
+        public DragButton(String word, wordType type)
         {
             Initialise();
             Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF000000"));
             Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFE7F7F7"));
+            this.Content = word;
+            this.type = type;
         }
 
         public static readonly DependencyProperty wordTypeProperty = DependencyProperty.Register

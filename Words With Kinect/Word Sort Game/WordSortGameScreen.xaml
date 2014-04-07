@@ -17,9 +17,9 @@
                 <GroupBox Header="Short-a" Name="ShortA_Column" HorizontalAlignment="Center" VerticalAlignment="Top" Height="483" Width="310" FontSize="36" FontFamily="Comic Sans MS" Foreground="White" BorderBrush="White" Canvas.Left="228" Canvas.Top="46"/>
                 <GroupBox Header="Long-a" Name="LongA_Column" HorizontalAlignment="Center" VerticalAlignment="Top" Height="483" Width="310" FontSize="36" FontFamily="Comic Sans MS" Foreground="White" BorderBrush="White" Canvas.Left="596" Canvas.Top="46"/>
                 <GroupBox Header="Oddball" Name="Oddball_Column" HorizontalAlignment="Center" VerticalAlignment="Top" Height="483" Width="310" FontSize="36" FontFamily="Comic Sans MS" Foreground="White" BorderBrush="White" Canvas.Left="962" Canvas.Top="46"/>
-                <local:DragButton Canvas.Left="443" Canvas.Top="643" Height="84" Content="Apple" type="ShortA" Click="DragButton_Drop"/>
-                <local:DragButton Canvas.Left="668" Canvas.Top="643" Height="84" Content="Bake" type="LongA" Click="DragButton_Drop"/>
-                <local:DragButton Canvas.Left="893" Canvas.Top="643" Height="84" Content="They" type="OddBall" Click="DragButton_Drop"/>
+                <!--<local:DragButton x:Name="applebutton" Canvas.Left="443" Canvas.Top="643" Height="84" Content="Apple" type="ShortA" Click="DragButton_Drop"/>-->
+                <!--<local:DragButton x:Name="bakebutton" Canvas.Left="668" Canvas.Top="643" Height="84" Content="Bake" type="LongA" Click="DragButton_Drop"/>-->
+                <!--<local:DragButton x:Name="theybutton" Canvas.Left="893" Canvas.Top="643" Height="84" Content="They" type="OddBall" Click="DragButton_Drop"/>-->
 
             </Canvas>
         </Grid>

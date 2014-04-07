@@ -13,6 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Kinect;
+using System.Linq.Expressions;
+using System.Data;
+using System.Data.SqlClient;
+using System.Data.Common;
+using System.Globalization;
 
 namespace Words_With_Kinect.Word_Sort_Game
 {
@@ -31,6 +36,53 @@ namespace Words_With_Kinect.Word_Sort_Game
             this.window = window;
             InitializeComponent();
             kinectRegion.KinectSensor = kinect;
+
+            WordDatabaseDataSet.WordsTableDataTable wt = new WordDatabaseDataSet.WordsTableDataTable();
+            WordDatabaseDataSetTableAdapters.WordsTableTableAdapter tableAdapter = 
+                new WordDatabaseDataSetTableAdapters.WordsTableTableAdapter();
+
+            wt = tableAdapter.GetData();
+            DataRow[] rows = wt.Select();
+
+            Random rand = new Random();
+            int numwords = 0;
+
+            DragButton[] words = new DragButton[3];
+            DataRow row;
+            DragButton.wordType type = DragButton.wordType.OddBall;
+
+            while (numwords < 3)
+            {
+                int r = rand.Next(0, rows.Length);
+                row = rows[r];
+                if (row == null)
+                {
+                    continue;
+                }
+                rows[r] = null;
+
+                if (row["WordSound"].Equals("LongA"))
+                {
+                    type = DragButton.wordType.LongA;
+                }
+                else if (row["WordSound"].Equals("ShortA"))
+                {
+                    type = DragButton.wordType.ShortA;
+                }
+                DragButton db = new DragButton(row["Word"].ToString(), type);
+                    
+                words[numwords++] = db;
+            }
+
+            foreach (DragButton db in words)
+            {
+                Console.WriteLine(db.Content);
+            }
+
+            //foreach(DataRow row in rows)
+            //{
+                //Console.WriteLine(row["Word"]);
+            //}
         }
 
         private void Back(object sender, RoutedEventArgs e)

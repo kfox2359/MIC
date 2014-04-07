@@ -58,7 +58,16 @@ SELECT Word, Difficulty, WordSound FROM WordsTable WHERE (Word = @Word)</Command
               <Mapping SourceColumn="Difficulty" DataSetColumn="Difficulty" />
               <Mapping SourceColumn="WordSound" DataSetColumn="WordSound" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="WordDatabaseConnectionString (Settings)" DbObjectName="dbo.WordsTable" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Word, Difficulty, WordSound FROM dbo.WordsTable WHERE WordSound='LongA'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -68,7 +77,7 @@ SELECT Word, Difficulty, WordSound FROM WordsTable WHERE (Word = @Word)</Command
   <xs:element name="WordDatabaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="WordDatabaseDataSet" msprop:Generator_UserDSName="WordDatabaseDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="WordsTable" msprop:Generator_TableClassName="WordsTableDataTable" msprop:Generator_TableVarName="tableWordsTable" msprop:Generator_TablePropName="WordsTable" msprop:Generator_RowDeletingName="WordsTableRowDeleting" msprop:Generator_RowChangingName="WordsTableRowChanging" msprop:Generator_RowEvHandlerName="WordsTableRowChangeEventHandler" msprop:Generator_RowDeletedName="WordsTableRowDeleted" msprop:Generator_UserTableName="WordsTable" msprop:Generator_RowChangedName="WordsTableRowChanged" msprop:Generator_RowEvArgName="WordsTableRowChangeEvent" msprop:Generator_RowClassName="WordsTableRow">
+        <xs:element name="WordsTable" msprop:Generator_TableClassName="WordsTableDataTable" msprop:Generator_TableVarName="tableWordsTable" msprop:Generator_RowChangedName="WordsTableRowChanged" msprop:Generator_TablePropName="WordsTable" msprop:Generator_RowDeletingName="WordsTableRowDeleting" msprop:Generator_RowChangingName="WordsTableRowChanging" msprop:Generator_RowEvHandlerName="WordsTableRowChangeEventHandler" msprop:Generator_RowDeletedName="WordsTableRowDeleted" msprop:Generator_RowClassName="WordsTableRow" msprop:Generator_UserTableName="WordsTable" msprop:Generator_RowEvArgName="WordsTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Word" msprop:Generator_ColumnVarNameInTable="columnWord" msprop:Generator_ColumnPropNameInRow="Word" msprop:Generator_ColumnPropNameInTable="WordColumn" msprop:Generator_UserColumnName="Word">
