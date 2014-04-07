@@ -40,7 +40,15 @@ namespace Words_With_Kinect
         /// <param name="e"></param>
         private void StartButton(object sender, RoutedEventArgs e)
         {
-            this.window.Content = new MatchingGameScreen(this.window, kinect);
+            bool selected = (bool)timedBox.IsChecked;
+            int sec = 21;
+            try
+            {
+                sec = Convert.ToInt32(seconds.Text);
+            }
+            catch (Exception) { }
+
+            this.window.Content = new MatchingGameScreen(this.window, kinect, selected, sec);
         }
 
         private void BackButton(object sender, RoutedEventArgs e)
@@ -48,6 +56,9 @@ namespace Words_With_Kinect
             this.window.Content = new Games(this.window,kinect);
         }
 
-
+        private void timedBox_Checked(object sender, RoutedEventArgs e)
+        {
+            seconds.Visibility = Visibility.Visible;
+        }
     }
 }

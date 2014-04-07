@@ -34,18 +34,44 @@ namespace Words_With_Kinect
         private MatchingObject _first;
         private MatchingObject _second;
         private int _score = 0;
-        private int time = 60;
+        private int _time = 60;
         private int _startTime = 60;
         private int _wins = 0;
         private bool _timed;
 
-        public MatchingGameScreen(MainWindow window, KinectSensor kinect)
+        public MatchingGameScreen(MainWindow window, KinectSensor kinect, bool timed, int time)
         {
             this.kinect = kinect;
             this.window = window;
+            _time = time;
+            _startTime = time;
+            _timed = timed;
             InitializeComponent();
             this.kinectRegion.KinectSensor = kinect;
+            if (timed)
+            {
+                DispatcherTimer timer = new DispatcherTimer();
+                timer.Interval = TimeSpan.FromSeconds(1);
+                timer.Tick += new EventHandler(CountDown);
+                timer.Start();
+            }
+            else
+            {
+                TimeWord.Visibility = Visibility.Hidden;
+            }
+        }
 
+        private void CountDown(Object sender, EventArgs args)
+        {
+            _time--;
+            if (_time == 0)
+            {
+                DispatcherTimer thisTimer = (DispatcherTimer)sender;
+                thisTimer.Stop();
+            }
+
+
+            TimeLabel.Content = "" + _time;
         }
 
         //---------------------BUTTONS---------------------
@@ -94,7 +120,79 @@ namespace Words_With_Kinect
 
 
         //---------------------Functions---------------------
-        
+
+        private void ProcessLoss()
+        {
+            _score -= 4;
+            ScoreLabel.Content = "" + _score;
+        }
+
+        private void ProcessWin()
+        {
+            _score += 10;
+            ScoreLabel.Content = "" + _score;
+            _wins += 1;
+
+            if (_wins == 3)
+            {
+                GameOver();
+            }
+
+        }
+
+        private void GameOver()
+        {
+            /* Made the scores visible on the bottom of the screen */
+            congradulations.Visibility = Visibility.Visible;
+            finalScore.Visibility = Visibility.Visible;
+            finalScore.Content = _score;
+            finalScoreText.Visibility = Visibility.Visible;
+            if (_timed)
+            {
+                finalTime.Visibility = Visibility.Visible;
+                finalTimeText.Visibility = Visibility.Visible;
+                finalTime.Content = "" + (_startTime - _time);
+                TimeWord.Visibility = Visibility.Hidden;
+                TimeLabel.Visibility = Visibility.Hidden;
+            }
+
+            /* Hide the scores on the top */
+            scoreTop.Visibility = Visibility.Hidden;
+            ScoreLabel.Visibility = Visibility.Hidden;
+            //playAgain.Visibility = Visibility.Visible;
+        }
+
+        private void CheckWinner(bool winCon)
+        {
+            if (winCon)
+            {
+                if (Match(_first, _second))
+                {
+                    _first.Disabled = true;
+                    _second.Disabled = true;
+                    ProcessWin();
+                }
+                else
+                {
+                    DispatcherTimer timer = new DispatcherTimer();
+                    timer.Interval = TimeSpan.FromSeconds(.5);
+                    timer.Tick += new EventHandler(WrongMatch);
+                    timer.Start();
+                    ProcessLoss();
+                }
+            }
+        }
+
+        private void WrongMatch(Object sender, EventArgs args)
+        {
+            DispatcherTimer thisTimer = (DispatcherTimer)sender;
+            thisTimer.Stop();
+
+            _first.Select();
+            _second.Select();
+            _first = null;
+            _second = null;
+        }
 
         /// <summary>
         /// Registers when there is a selection and returns if there is a correct match
@@ -119,35 +217,6 @@ namespace Words_With_Kinect
             return false;
         }
 
-
-
-        private void ProcessLoss()
-        {
-            _score -= 4;
-            ScoreLabel.Content = "" + _score;
-        }
-        private void ProcessWin()
-        {
-            _score += 10;
-            ScoreLabel.Content = "" + _score;
-            _wins += 1;
-
-            if (_wins == 6)
-            {
-                //GameOver();
-            }
-                
-        }
-
-
-        private void WrongMatch(Object sender, EventArgs args)
-        {
-            _first.Select();
-            _second.Select();
-            _first = null;
-            _second = null;
-        }
-
         /// <summary>
         /// Returns if the objects selected are correctly matched
         /// </summary>
@@ -158,83 +227,22 @@ namespace Words_With_Kinect
         {
             if (x1.Sort.Equals("LongA") && x2.Sort.Equals("LongA"))
             {
-                // Create a Line
-                Line redLine = new Line();
-                redLine.X1 = 200;
-                redLine.Y1 = 200;
-                redLine.X2 = 400;
-                redLine.Y2 = 400;
-
-                // Create a red Brush
-                SolidColorBrush redBrush = new SolidColorBrush();
-                redBrush.Color = Colors.Red;
-
-                // Set Line's width and color
-                redLine.StrokeThickness = 4;
-                redLine.Stroke = redBrush;
-
+                line1.Visibility = Visibility.Visible;
                 return true;
             }
             if (x1.Sort.Equals("ShortA") && x2.Sort.Equals("ShortA"))
             {
-                // Create a Line
-                Line redLine = new Line();
-                redLine.X1 = 200;
-                redLine.Y1 = 200;
-                redLine.X2 = 400;
-                redLine.Y2 = 200;
-
-                // Create a red Brush
-                SolidColorBrush redBrush = new SolidColorBrush();
-                redBrush.Color = Colors.Red;
-
-                // Set Line's width and color
-                redLine.StrokeThickness = 4;
-                redLine.Stroke = redBrush;
+                line3.Visibility = Visibility.Visible;
                 return true;
             }
             if (x1.Sort.Equals("Junk") && x2.Sort.Equals("Junk"))
             {
-                // Create a Line
-                Line redLine = new Line();
-                redLine.X1 = 200;
-                redLine.Y1 = 400;
-                redLine.X2 = 400;
-                redLine.Y2 = 200;
-
-                // Create a red Brush
-                SolidColorBrush redBrush = new SolidColorBrush();
-                redBrush.Color = Colors.Red;
-
-                // Set Line's width and color
-                redLine.StrokeThickness = 4;
-                redLine.Stroke = redBrush;
+                line2.Visibility = Visibility.Visible;
                 return true;
             }
 
             return false;
         }
 
-        private void CheckWinner(bool winCon)
-        {
-            if (winCon)
-            {
-                if (Match(_first, _second))
-                {
-                    _first.Disabled = true;
-                    _second.Disabled = true;
-                    ProcessWin();
-                }
-                else
-                {
-                    DispatcherTimer timer = new DispatcherTimer();
-                    timer.Interval = TimeSpan.FromSeconds(.5);
-                    timer.Tick += new EventHandler(WrongMatch);
-                    timer.Start();
-                    ProcessLoss();
-                }
-            }
-        }
-      
     }
 }
