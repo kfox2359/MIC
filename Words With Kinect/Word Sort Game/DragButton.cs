@@ -16,15 +16,6 @@ namespace Words_With_Kinect.Word_Sort_Game
         private bool isGripped = false;
         public enum wordType{LongA, ShortA, OddBall};
 
-        public DragButton(String word, wordType type)
-        {
-            Initialise();
-            Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF000000"));
-            Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFE7F7F7"));
-            this.Content = word;
-            this.type = type;
-        }
-
         public static readonly DependencyProperty wordTypeProperty = DependencyProperty.Register
        (
             "wordType",
@@ -45,6 +36,21 @@ namespace Words_With_Kinect.Word_Sort_Game
             }
         }
 
+        public DragButton()
+        {
+            Initialise();
+            Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF000000"));
+            Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFE7F7F7"));
+        }
+
+        public DragButton(String word, wordType type)
+        {
+            Initialise();
+            Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF000000"));
+            Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFE7F7F7"));
+            this.Content = word;
+            this.type = type;
+        }
         private void Initialise()
         {
             KinectRegion.AddHandPointerGotCaptureHandler(this, this.OnHandPointerCaptured);

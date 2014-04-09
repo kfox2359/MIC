@@ -47,11 +47,11 @@ namespace Words_With_Kinect.Word_Sort_Game
             Random rand = new Random();
             int numwords = 0;
 
-            DragButton[] words = new DragButton[3];
+            DragButton[] words = new DragButton[8];
             DataRow row;
             DragButton.wordType type = DragButton.wordType.OddBall;
 
-            while (numwords < 3)
+            while (numwords < 8)
             {
                 int r = rand.Next(0, rows.Length);
                 row = rows[r];
@@ -74,10 +74,23 @@ namespace Words_With_Kinect.Word_Sort_Game
                 words[numwords++] = db;
             }
 
-            foreach (DragButton db in words)
-            {
-                Console.WriteLine(db.Content);
-            }
+            this.word_one.Content = words[0].Content;
+            this.word_one.type = words[0].type;
+            this.word_two.Content = words[1].Content;
+            this.word_two.type = words[1].type;
+            this.word_three.Content = words[2].Content;
+            this.word_three.type = words[2].type;
+            this.word_four.Content = words[3].Content;
+            this.word_four.type = words[3].type;
+            this.word_five.Content = words[4].Content;
+            this.word_five.type = words[4].type;
+            this.word_six.Content = words[5].Content;
+            this.word_six.type = words[5].type;
+            this.word_seven.Content = words[6].Content;
+            this.word_seven.type = words[6].type;
+            this.word_eight.Content = words[7].Content;
+            this.word_eight.type = words[7].type;
+            
 
             //foreach(DataRow row in rows)
             //{
@@ -238,7 +251,7 @@ namespace Words_With_Kinect.Word_Sort_Game
                     Console.WriteLine("Null or invalid type assigned to this word.");
                     break;
             }
-            if (numCorrect == 3)
+            if (numCorrect == 8)
             {
                 window.Content = new WordSort(window, kinect);
             }
