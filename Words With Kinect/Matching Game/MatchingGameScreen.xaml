@@ -15,7 +15,7 @@
     <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0">
         <Grid RenderTransformOrigin="0.536,0.53">
 
-            <k:KinectTileButton Content="Back" Margin="43,710,972,0" VerticalAlignment="Top" Height="62" FontSize="36" Width="185" Foreground="#FFEDF7F7" Click="Back" HorizontalAlignment="Left"/>
+            <k:KinectTileButton Content="Back" Margin="10,670,0,10" Height="120" FontSize="36" Width="300" Foreground="#FFEDF7F7" Click="Back" HorizontalAlignment="Left" Opacity="0.65"/>
 
 
             <local:MatchingObject x:Name="r3c1" Click="r3c1_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="211,487,833,152" Content="Hat" Sort="ShortA">
