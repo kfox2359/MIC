@@ -12,7 +12,7 @@
     </UserControl.Background>
     <k:KinectRegion x:Name="kinectRegion">
         <Grid>
-            <Label Content="WordSort" VerticalAlignment="Top" Width="364" Height="117" FontSize="72" Foreground="#FFF7EDED" FontFamily="Comic Sans MS" Margin="417,141,419,0"/>
+            <Label Content="WordSort" VerticalAlignment="Top" HorizontalAlignment="Center" Height="117" FontSize="85" Foreground="#FFF7EDED" FontFamily="Comic Sans MS" Margin="417,141,365,0"/>
             <TextBlock Margin="264,303,264,360" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Sort the word into the column that matches its sound." FontSize="48" Foreground="#FFFBF5F5"/>
 
             <k:KinectTileButton Content="Start" Height="180" Width="545" FontSize="36" Foreground="#FFF1F7F7" Margin="328,483,327,137" Click="Start" Opacity=".65"/>

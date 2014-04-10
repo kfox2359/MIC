@@ -31,7 +31,7 @@
             <Label x:Name="ScoreLabel" Content=" " HorizontalAlignment="Left" Margin="112,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
             <Label x:Name="TimeWord" Content="Time:" HorizontalAlignment="Left" Margin="493,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
             <Label x:Name="TimeLabel" Content=" " HorizontalAlignment="Left" Margin="563,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
-            <Label x:Name="congradulations" Content="Congradulations"  Margin="410,618,414,0" VerticalAlignment="Top" Height="78" FontSize="48" Foreground="#FF35F30B" Visibility="Hidden"/>
+            <Label x:Name="congradulations" Content="Congratulations"  Margin="410,618,414,0" VerticalAlignment="Top" Height="78" FontSize="48" Foreground="#FF35F30B" Visibility="Hidden"/>
             <Label x:Name="finalScoreText" Content="Score:"  Margin="410,695,710,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24" Visibility="Hidden"/>
             <Label x:Name="finalScore" Content="" Margin="490,695,661,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24"/>
             <Label x:Name="finalTimeText"  Content="Time:"  Margin="410,742,710,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24" Visibility="Hidden"/>
