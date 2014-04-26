@@ -1,0 +1,43 @@
+﻿<UserControl 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:k="http://schemas.microsoft.com/kinect/2013"
+             xmlns:local="clr-namespace:Words_With_Kinect.Memory_Game" 
+            x:Class="Words_With_Kinect.MemoryGameScreen"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1200" 
+        >
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Words With Kinect;component/Resources/Blackboard.jpg"/>
+    </UserControl.Background>
+    <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0">
+        <Grid>
+            <k:KinectTileButton Content="Back" Margin="10,670,0,10" HorizontalAlignment="Left" Height="120" FontSize="36" Click="CustomButton_Click" Width="300" Foreground="#FFEDF7F7" Opacity="0.65"/>
+            <local:MemoryCard x:Name="r1c1"  Margin="94,84,896,0" Word="bad" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="210" Click="r1c1_Click" Background="#FFB61C0D"/>
+            <local:MemoryCard x:Name="r2c1"  Margin="94,264,896,0" Word="mad" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="210" Background="#FFB61C0D" Click="r2c1_Click"/>
+            <local:MemoryCard x:Name="r3c1"  Margin="94,446,896,0" Word="bake" LongA="true" VerticalAlignment="Top" Height="150" FontSize="36" Width="210" Background="#FFB61C0D" Click="r3c1_Click"/>
+            <local:MemoryCard x:Name="r1c2"  Margin="352,84,638,0" Word="cake" LongA="true" VerticalAlignment="Top" Height="150" FontSize="36" Width="210" Background="#FFB61C0D" Click="r1c2_Click"/>
+            <local:MemoryCard x:Name="r2c2"  Margin="352,264,638,0" Word="make" LongA="true" VerticalAlignment="Top" Height="150" FontSize="36" Width="210" Background="#FFB61C0D" Click="r2c2_Click"/>
+            <local:MemoryCard x:Name="r3c2"  Margin="352,446,638,0" Word="game" LongA="true" VerticalAlignment="Top" Height="150" FontSize="36" Width="210" Background="#FFB61C0D" Click="r3c2_Click"/>
+            <local:MemoryCard x:Name="r1c3"  Margin="612,84,378,0" Word="blame" LongA="true" VerticalAlignment="Top" Height="150" FontSize="36" Width="210" Background="#FFB61C0D" Click="r1c3_Click"/>
+            <local:MemoryCard x:Name="r2c3"  Margin="612,264,378,0" Word="bat" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="210" Background="#FFB61C0D" Click="r2c3_Click"/>
+            <local:MemoryCard x:Name="r3c3"  Margin="612,446,378,0" Word="cat" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="210" Background="#FFB61C0D" Click="r3c3_Click"/>
+            <local:MemoryCard x:Name="r1c4"  Margin="874,84,116,0" Word="sat" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="210" Background="#FFB61C0D" Click="r1c4_Click"/>
+            <local:MemoryCard x:Name="r2c4"  Margin="874,264,116,0" Word="jam" LongA="False" VerticalAlignment="Top" Height="150" FontSize="36" Width="210" Background="#FFB61C0D" Click="r2c4_Click"/>
+            <local:MemoryCard x:Name="r3c4"  Margin="874,446,116,0" Word="mate" LongA="true" VerticalAlignment="Top" Height="150" FontSize="36" Width="210" Background="#FFB61C0D" Click="r3c4_Click"/>
+            <Label x:Name="scoreTop" Content="Score:" HorizontalAlignment="Left" Margin="43,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="ScoreLabel" Content=" " HorizontalAlignment="Left" Margin="112,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="TimeWord" Content="Time:" HorizontalAlignment="Left" Margin="493,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="TimeLabel" Content=" " HorizontalAlignment="Left" Margin="563,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="congradulations" Content="Congratulations"  Margin="410,618,414,0" VerticalAlignment="Top" Height="78" FontSize="48" Foreground="#FF35F30B" Visibility="Hidden"/>
+            <Label x:Name="finalScoreText" Content="Score:"  Margin="410,695,710,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24" Visibility="Hidden"/>
+            <Label x:Name="finalScore" Content="" Margin="490,695,661,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24"/>
+            <Label x:Name="finalTimeText"  Content="Time:"  Margin="410,742,710,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24" Visibility="Hidden"/>
+            <Label x:Name="finalTime" Content=""  Margin="484,743,673,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24"/>
+            <k:KinectTileButton x:Name="playAgain" Content="Play Again?" Margin="612,701,378,0" VerticalAlignment="Top" Height="71" FontSize="36" Click="playAgain_Click" Width="Auto" Foreground="#FFEDF7F7" Visibility="Hidden"/>
+
+        </Grid>
+    </k:KinectRegion>
+</UserControl>

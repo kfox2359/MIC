@@ -1,0 +1,27 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:k="http://schemas.microsoft.com/kinect/2013"
+             xmlns:local="clr-namespace:Words_With_Kinect"
+             x:Class="Words_With_Kinect.MemoryGame"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1200">
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Words With Kinect;component/Resources/Blackboard.jpg"/>
+    </UserControl.Background>
+    <Grid>
+        <k:KinectRegion x:Name="kinectRegion">
+            <Grid>
+                <Label Content="Memory"  Margin="436,67,437,0" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="85" Foreground="#FFF7EAEA" FontFamily="Comic Sans MS"/>
+                <TextBlock  Margin="314,200,314,342" TextWrapping="Wrap" Text="Select a card to flip it over. Find two blocks that have the same sound and win points. Good luck!"  Height="258" Width="572" FontSize="48" Foreground="#FFFBF5F5"/>
+                <k:KinectTileButton Content="Start"  Margin="327,492,328,0" VerticalAlignment="Top" Height="180" Width="545" FontSize="72" Click="CustomButton_Click" Foreground="#FFF1F7F7" Opacity="0.65"/>
+                <k:KinectTileButton Content="Back" HorizontalAlignment="Left" Margin="10,670,890,10"   Height="120" FontSize="36" Click="CustomButton_Click_1" Width="300" Foreground="#FFF1F7F7" Opacity="0.65"/>
+                <CheckBox x:Name="timedBox" Content="Timed" HorizontalAlignment="Right" Margin="989,560,131,199"  Foreground="#FFF7EAEA" FontSize="18" Height="41" Checked="timedBox_Checked"/>
+                <TextBox x:Name="seconds" Height="23" Margin="989,560,124,0" TextWrapping="Wrap" Text="(Seconds)" VerticalAlignment="Top" Width="87" Visibility="Hidden"/>
+            </Grid>
+        </k:KinectRegion>
+        <k:KinectTileButton x:Name="demoBtn" Content="Demo" HorizontalAlignment="Right" Margin="890,670,10,10"   Height="120" FontSize="36" Click="CustomButton_Click_1" Width="300" Foreground="#FFF1F7F7" Opacity="0.65"/>
+    </Grid>
+</UserControl>

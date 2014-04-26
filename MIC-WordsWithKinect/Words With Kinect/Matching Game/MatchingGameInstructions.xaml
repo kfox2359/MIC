@@ -1,0 +1,28 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:k="http://schemas.microsoft.com/kinect/2013"
+             xmlns:local="clr-namespace:Words_With_Kinect"
+             x:Class="Words_With_Kinect.MatchingGameInstructions"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1200">
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Words With Kinect;component/Resources/Blackboard.jpg"/>
+    </UserControl.Background>
+    <Grid>
+        <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0">
+            <Grid>
+                <Label Content="Matching"  Margin="410,101,408,0" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="85" Foreground="#FFF7EAEA" FontFamily="Comic Sans MS"/>
+                <TextBlock  Margin="192,232,192,0" TextWrapping="Wrap" Text="Match the picture on the left with a picture on the right that is in the same category: Long A, Short A, or Oddball." VerticalAlignment="Top" Height="243" FontSize="48" Foreground="#FFFBF5F5" Width="816"/>
+
+                <k:KinectTileButton Content="Start"  Margin="327,455,328,0" VerticalAlignment="Top" Height="180" Width="545" FontSize="36" Foreground="#FFF1F7F7" Click="StartButton" Opacity=".65"/>
+                <k:KinectTileButton Content="Back" Margin="10,670,0,10" HorizontalAlignment="Left" Height="120" FontSize="36" Width="300" Foreground="#FFF1F7F7" Click="BackButton" Opacity=".65"/>
+                <CheckBox x:Name="timedBox" Content="Timed" HorizontalAlignment="Right" Margin="0,698,80,0" VerticalAlignment="Top" Foreground="#FFF7EAEA" FontSize="18" Width="148" Height="29"/>
+                <TextBox x:Name="seconds" Height="23" Margin="852,698,261,0" TextWrapping="Wrap" Text="(Seconds)" VerticalAlignment="Top" Width="87" Visibility="Hidden"/>
+            </Grid>
+        </k:KinectRegion>
+    </Grid>
+</UserControl>
+    

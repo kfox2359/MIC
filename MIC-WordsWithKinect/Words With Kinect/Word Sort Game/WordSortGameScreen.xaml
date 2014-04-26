@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Words_With_Kinect.Word_Sort_Game.WordSortGameScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:k="http://schemas.microsoft.com/kinect/2013"
+             xmlns:local="clr-namespace:Words_With_Kinect.Word_Sort_Game"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1490">
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Words With Kinect;component/Resources/Blackboard.jpg"/>
+    </UserControl.Background>
+    <k:KinectRegion x:Name="kinectRegion">
+        <Grid>
+            <Canvas>
+                <k:KinectTileButton Content="Back" HorizontalAlignment="Left" Height="120" FontSize="36" Click="Back" Width="300" Foreground="#FFF1F7F7" Canvas.Left="10" Canvas.Top="670" Opacity="0.65"/>
+                <GroupBox Header="Short-a" Name="ShortA_Column" HorizontalAlignment="Center" VerticalAlignment="Top" Height="483" Width="310" FontSize="36" FontFamily="Comic Sans MS" Foreground="White" BorderBrush="White" Canvas.Left="228" Canvas.Top="46"/>
+                <GroupBox Header="Long-a" Name="LongA_Column" HorizontalAlignment="Center" VerticalAlignment="Top" Height="483" Width="310" FontSize="36" FontFamily="Comic Sans MS" Foreground="White" BorderBrush="White" Canvas.Left="596" Canvas.Top="46"/>
+                <GroupBox Header="Oddball" Name="Oddball_Column" HorizontalAlignment="Center" VerticalAlignment="Top" Height="483" Width="310" FontSize="36" FontFamily="Comic Sans MS" Foreground="White" BorderBrush="White" Canvas.Left="962" Canvas.Top="46"/>
+                <local:DragButton x:Name="word_one" Canvas.Left="392" Canvas.Top="553" Height="113" Content="Apple" type="ShortA" Click="DragButton_Drop"/>
+                <local:DragButton x:Name="word_two" Canvas.Left="638" Canvas.Top="553" Height="113" Content="Bake" type="LongA" Click="DragButton_Drop"/>
+                <local:DragButton x:Name="word_three" Canvas.Left="881" Canvas.Top="553" Height="113" Content="They" type="OddBall" Click="DragButton_Drop"/>
+                <local:DragButton x:Name="word_four" Canvas.Left="392" Canvas.Top="677" Height="113" Content="Cat" type="OddBall" Click="DragButton_Drop"/>
+                <local:DragButton x:Name="word_five" Canvas.Left="638" Canvas.Top="677" Height="113" Content="Nail" type="OddBall" Click="DragButton_Drop"/>
+                <local:DragButton x:Name="word_six" Canvas.Left="881" Canvas.Top="677" Height="113" Content="Jail" type="OddBall" Click="DragButton_Drop"/>
+                <local:DragButton x:Name="word_seven" Canvas.Left="1123" Canvas.Top="553" Height="113" Content="They" type="OddBall" Click="DragButton_Drop"/>
+                <local:DragButton x:Name="word_eight" Canvas.Left="1123" Canvas.Top="677" Height="113" Content="They" type="OddBall" Click="DragButton_Drop"/>
+            </Canvas>
+        </Grid>
+    </k:KinectRegion>
+</UserControl>

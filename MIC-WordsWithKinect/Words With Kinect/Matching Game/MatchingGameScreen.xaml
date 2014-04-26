@@ -1,0 +1,102 @@
+﻿<UserControl 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:k="http://schemas.microsoft.com/kinect/2013"
+             xmlns:local="clr-namespace:Words_With_Kinect.Matching_Game" 
+             x:Class="Words_With_Kinect.MatchingGameScreen"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1200" 
+        >
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Words With Kinect;component/Resources/Blackboard.jpg"/>
+    </UserControl.Background>
+    <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0">
+        <Grid RenderTransformOrigin="0.536,0.53">
+
+            <k:KinectTileButton Content="Back" Margin="10,670,0,10" Height="120" FontSize="36" Width="300" Foreground="#FFEDF7F7" Click="Back" HorizontalAlignment="Left" Opacity="0.65"/>
+
+
+            <local:MatchingObject x:Name="r3c1" Click="r3c1_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="211,487,833,152" Content="Hat" Sort="ShortA">
+                <local:MatchingObject.Template>
+                    <ControlTemplate>
+                        <Image Source="/Words With Kinect;component/Resources/hat.jpg"></Image>
+                    </ControlTemplate>
+                </local:MatchingObject.Template>
+            </local:MatchingObject>
+
+
+            <local:MatchingObject x:Name="r2c2" Click="r2c2_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="849,297,167,360" Content="Cat" Sort="ShortA">
+                <local:MatchingObject.Template>
+                    <ControlTemplate>
+                        <Image Source="/Words With Kinect;component/Resources/cat.jpg"></Image>
+                    </ControlTemplate>
+                </local:MatchingObject.Template>
+            </local:MatchingObject>
+
+
+            <local:MatchingObject x:Name="r2c1" Click="r2c1_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="211,297,833,344" Content="Train" Sort="LongA">
+                <local:MatchingObject.Template>
+                    <ControlTemplate>
+                        <Image Source="/Words With Kinect;component/Resources/train.jpg"></Image>
+                    </ControlTemplate>
+                </local:MatchingObject.Template>
+            </local:MatchingObject>
+
+            <local:MatchingObject x:Name="r1c2" Click="r1c2_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="849,109,180,548" Content="Cake" Sort="LongA">
+                <local:MatchingObject.Template>
+                    <ControlTemplate>
+                        <Image Source="/Words With Kinect;component/Resources/cake.jpg"></Image>
+                    </ControlTemplate>
+                </local:MatchingObject.Template>
+            </local:MatchingObject>
+
+
+            <local:MatchingObject x:Name="r1c1" Click="r1c1_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="211,109,833,539" Content="Dog" Sort="Junk">
+                <local:MatchingObject.Template>
+                    <ControlTemplate>
+                        <Image Source="/Words With Kinect;component/Resources/dog.jpg"></Image>
+                    </ControlTemplate>
+                </local:MatchingObject.Template>
+            </local:MatchingObject>
+
+            <local:MatchingObject x:Name="r3c2" Click="r3c2_button" Height="156" Width="156" RenderTransformOrigin="1.08,1.72" Margin="862,487,180,174" Content="Tree" Sort="Junk">
+                <local:MatchingObject.Template>
+                    <ControlTemplate>
+                        <Image Source="/Words With Kinect;component/Resources/tree.jpg"></Image>
+                    </ControlTemplate>
+                </local:MatchingObject.Template>
+            </local:MatchingObject>
+
+
+
+            <Label x:Name="scoreTop" Content="Score:" HorizontalAlignment="Left" Margin="43,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="ScoreLabel" Content=" " HorizontalAlignment="Left" Margin="112,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="TimeWord" Content="Time:" HorizontalAlignment="Left" Margin="493,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="TimeLabel" Content=" " HorizontalAlignment="Left" Margin="563,29,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FFF9F3F3"/>
+            <Label x:Name="congradulations" Content="Congratulations! You won!"  Margin="595,648,0,0" VerticalAlignment="Top" Height="78" FontSize="48" Foreground="#FF35F30B" HorizontalAlignment="Left" Visibility="Hidden"/>
+            <Label x:Name="finalScoreText" Content="Score:"  Margin="595,712,0,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24" RenderTransformOrigin="2.412,0.583" HorizontalAlignment="Left" Visibility="Hidden"/>
+            <Label x:Name="finalScore" Content="" Margin="669,712,482,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24"/>
+            <Label x:Name="finalTimeText"  Content="Time:"  Margin="595,752,0,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24" HorizontalAlignment="Left" RenderTransformOrigin="0.507,0.604" Visibility="Hidden"/>
+            <Label x:Name="finalTime" Content=""  Margin="662,752,495,0" VerticalAlignment="Top" Height="48" Foreground="#FF35F30B" FontSize="24"/>
+
+
+
+            <Path Name="line1" Visibility="Hidden" Stroke="#FFFBA207" StrokeThickness="4" Data="M 300,500 L 200,700" Margin="474.619,209.475,0,0" Stretch="Fill" Height="143" Width="513" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Path Name="line2" Visibility="Hidden" Stroke="#FFFBA207" StrokeThickness="4" Data="M 600,800 L 200,300" Margin="471.633,244.465,0,0" Stretch="Fill" Width="531" Height="270" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Path Name="line3" Visibility="Hidden" Stroke="#FFFBA207" StrokeThickness="4" Data="M 400,400 L 400,0" Margin="550.154,695.281,0,-448.09" RenderTransformOrigin="0.132,-1.628" Stretch="Fill" Width="4" Height="552.809" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-0.142"/>
+                        <RotateTransform Angle="72.819"/>
+                        <TranslateTransform X="1313.405" Y="321.096"/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+
+
+        </Grid>
+    </k:KinectRegion>
+</UserControl>

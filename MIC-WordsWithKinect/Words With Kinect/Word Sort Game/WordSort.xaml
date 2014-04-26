@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Words_With_Kinect.Word_Sort_Game.WordSort"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:k="http://schemas.microsoft.com/kinect/2013"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1200">
+
+    <UserControl.Background>
+        <ImageBrush ImageSource="/Words With Kinect;component/Resources/Blackboard.jpg"/>
+    </UserControl.Background>
+    <k:KinectRegion x:Name="kinectRegion">
+        <Grid>
+            <Label Content="WordSort" VerticalAlignment="Top" HorizontalAlignment="Center" Height="117" FontSize="85" Foreground="#FFF7EDED" FontFamily="Comic Sans MS" Margin="417,141,365,0"/>
+            <TextBlock Margin="264,303,264,360" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Sort the word into the column that matches its sound." FontSize="48" Foreground="#FFFBF5F5"/>
+
+            <k:KinectTileButton Content="Start" Height="180" Width="545" FontSize="36" Foreground="#FFF1F7F7" Margin="328,483,327,137" Click="Start" Opacity=".65"/>
+            <k:KinectTileButton Content="Back" Margin="10,670,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="120" FontSize="36" Click="Back" Width="300" Foreground="#FFF1F7F7" Opacity=".65"/>
+
+        </Grid>
+    </k:KinectRegion>
+</UserControl>
