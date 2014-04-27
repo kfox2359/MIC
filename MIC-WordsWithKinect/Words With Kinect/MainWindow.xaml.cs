@@ -245,9 +245,9 @@ namespace Words_With_Kinect
                 //a grammar file.
 
                 var directions = new Choices();
-                directions.Add(new SemanticResultValue("computer start", "START"));
+               // directions.Add(new SemanticResultValue("computer start", "START"));
                 directions.Add(new SemanticResultValue("start", "START"));
-                directions.Add(new SemanticResultValue("computer lets start", "START"));
+                //directions.Add(new SemanticResultValue("computer lets start", "START"));
                 var gb = new GrammarBuilder { Culture = ri.Culture };
                 gb.Append(directions);
 
