@@ -69,6 +69,10 @@ namespace Words_With_Kinect.Word_Sort_Game
                 {
                     type = DragButton.wordType.ShortA;
                 }
+                else
+                {
+                    type = DragButton.wordType.OddBall;
+                }
                 DragButton db = new DragButton(row["Word"].ToString(), type);
                     
                 words[numwords++] = db;
