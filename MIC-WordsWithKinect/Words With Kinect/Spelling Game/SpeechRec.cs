@@ -82,9 +82,10 @@ namespace Words_With_Kinect.Spelling_Game
         /// <param name="e">event arguments.</param>
         private void SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
+            string temp="";
             // Speech utterance confidence below which we treat speech as if it hadn't been heard
             const double ConfidenceThreshold = 0.7;
-            string temp = "";
+            //string temp = "";
             //ClearRecognitionHighlights();
             //this.SpeechKinectGot.Text = youSaidText + e.Result.Semantics.Value.ToString();
             //this.SpeechRecConf.Text = speechRecConfText + e.Result.Confidence.ToString();

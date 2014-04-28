@@ -157,7 +157,7 @@ namespace Microsoft.Samples.Kinect.SpeechBasics
 
                 // For long recognition sessions (a few hours or more), it may be beneficial to turn off adaptation of the acoustic model. 
                 // This will prevent recognition accuracy from degrading over time.
-                ////speechEngine.UpdateRecognizerSetting("AdaptationOn", 0);
+                speechEngine.UpdateRecognizerSetting("AdaptationOn", 0);
 
                 speechEngine.SetInputToAudioStream(
                     sensor.AudioSource.Start(), new SpeechAudioFormatInfo(EncodingFormat.Pcm, 16000, 16, 1, 32000, 2, null));

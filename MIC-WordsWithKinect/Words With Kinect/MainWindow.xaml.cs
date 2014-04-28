@@ -18,6 +18,7 @@ using System.Windows.Shapes;
 using Words_With_Kinect.Spelling_Game;
 using Microsoft.Speech.AudioFormat;
 using Microsoft.Speech.Recognition;
+using System.Speech.Synthesis;
 using System.IO;
 
 namespace Words_With_Kinect
@@ -28,9 +29,12 @@ namespace Words_With_Kinect
     public partial class MainWindow : Window
     {       
         
+        SpeechSynthesizer reader = new SpeechSynthesizer();
         private KinectSensorChooser sensorChooser;
         private bool nearMode;
-        
+
+        private KinectSensor kinect;
+        private MainWindow window;
         /// <summary>
         /// Active Kinect sensor.
         /// </summary>
@@ -41,19 +45,20 @@ namespace Words_With_Kinect
         /// </summary>
         private SpeechRecognitionEngine speechEngine;
 
-
-        /// <summary>
-        /// List of all UI span elements used to select recognized text.
-        /// </summary>
-        private List<Span> recognitionSpans;
-
         public MainWindow(bool nearMode)
         {
             this.nearMode = nearMode;
             InitializeComponent();
             Closing += MainWindow_Closing;
             Loaded += OnLoaded;
-            //InitializeComponent();
+
+            //speak
+
+            //reader.Dispose();
+            reader = new SpeechSynthesizer();
+            reader.Rate = 1;
+            reader.SpeakAsync("Welcome to Words With kin nect.");
+            reader.SpeakCompleted += new EventHandler<SpeakCompletedEventArgs>(reader_SpeakCompleted);
         }
 
         void MainWindow_Closing(object sender, CancelEventArgs e)
@@ -75,7 +80,6 @@ namespace Words_With_Kinect
                 this.sensor.Stop();
                 this.sensor = null;
             }
-
             if (null != this.speechEngine)
             {
                 this.speechEngine.SpeechRecognized -= SpeechRecognized;
@@ -157,6 +161,7 @@ namespace Words_With_Kinect
 
         private void CustomButton_Click(object sender, RoutedEventArgs e)
         {
+
             this.Content = new Games(this,sensorChooser.Kinect);
         }
 
@@ -204,6 +209,7 @@ namespace Words_With_Kinect
             // This requires that a Kinect is connected at the time of app startup.
             // To make your app robust against plug/unplug, 
             // it is recommended to use KinectSensorChooser provided in Microsoft.Kinect.Toolkit (See components in Toolkit Browser).
+
             foreach (var potentialSensor in KinectSensor.KinectSensors)
             {
                 if (potentialSensor.Status == KinectStatus.Connected)
@@ -246,7 +252,10 @@ namespace Words_With_Kinect
 
                 var directions = new Choices();
                // directions.Add(new SemanticResultValue("computer start", "START"));
-                directions.Add(new SemanticResultValue("start", "START"));
+                directions.Add(new SemanticResultValue("computer start", "START"));
+                directions.Add(new SemanticResultValue("lets start", "START"));
+                directions.Add(new SemanticResultValue("please start", "START"));
+                //Console.Write("directions.Add(new SemanticResultValue(\"start\", \"START\"));");
                 //directions.Add(new SemanticResultValue("computer lets start", "START"));
                 var gb = new GrammarBuilder { Culture = ri.Culture };
                 gb.Append(directions);
@@ -265,6 +274,7 @@ namespace Words_With_Kinect
                 speechEngine.SpeechRecognized += SpeechRecognized;
                 speechEngine.SpeechRecognitionRejected += SpeechRejected;
 
+                reader.SpeakAsync("loading speech engine.");
                 // For long recognition sessions (a few hours or more), it may be beneficial to turn off adaptation of the acoustic model. 
                 // This will prevent recognition accuracy from degrading over time.
                 ////speechEngine.UpdateRecognizerSetting("AdaptationOn", 0);
@@ -272,7 +282,15 @@ namespace Words_With_Kinect
                 speechEngine.SetInputToAudioStream(
                     sensor.AudioSource.Start(), new SpeechAudioFormatInfo(EncodingFormat.Pcm, 16000, 16, 1, 32000, 2, null));
                 speechEngine.RecognizeAsync(RecognizeMode.Multiple);
+                //speechEngine.RecognizeAsync();
             }
+
+            reader.SpeakAsync("loading finished.");
+
+        }
+        void reader_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
+        {
+            
         }
 
             
@@ -284,15 +302,20 @@ namespace Words_With_Kinect
         private void SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             // Speech utterance confidence below which we treat speech as if it hadn't been heard
-            const double ConfidenceThreshold = 0.2;
-
-           
+            const double ConfidenceThreshold = 0.7;
+            
             if (e.Result.Confidence >= ConfidenceThreshold)
             //if (e.Result.Semantics.Value.ToString() != null && !e.Result.Semantics.Value.ToString().Equals(""))
             {
+                
                 switch (e.Result.Semantics.Value.ToString())
                 {
                     case "START":
+                        //the events when the speech is recognized
+                        reader = new SpeechSynthesizer();
+                        reader.Rate = 2;
+                        reader.SpeakAsync("OK, lets start.");
+                        reader.SpeakCompleted += new EventHandler<SpeakCompletedEventArgs>(reader_SpeakCompleted);
                         this.Content = new Games(this, sensorChooser.Kinect);
                         break;
                 }

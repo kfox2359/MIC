@@ -5,7 +5,7 @@
         xmlns:local="clr-namespace:Words_With_Kinect" x:Class="Words_With_Kinect.MainWindow"
         Title="Words With Kinect" HorizontalAlignment="Center" VerticalAlignment="Center" Height="800" Width="1200"
         WindowStartupLocation="CenterScreen" WindowState="Maximized"
-        >
+        Loaded="WindowLoaded" >
     <Window.Background>
         <ImageBrush ImageSource="/Words With Kinect;component/Resources/Blackboard.jpg"/>
     </Window.Background>
@@ -14,7 +14,6 @@
         <k:KinectRegion x:Name="kinectRegion" Margin="0,0,0,0" Unloaded="kinectRegion_Unloaded">
             <Grid>
                 <Label Content="Words With Kinect" Margin="52,147,10,0" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="120" FontFamily="Comic Sans MS" Foreground="WhiteSmoke" Height="264" Width="1130"/>
-
                 <k:KinectTileButton Content="Start" Margin="304,411,305,0" VerticalAlignment="Top" Height="143" Width="Auto" FontSize="36" Click="CustomButton_Click" Foreground="#FFE3F0F0" Background="Black" Opacity="0.5" />
                 <k:KinectUserViewer VerticalAlignment="Top" HorizontalAlignment="Center" 
                 k:KinectRegion.KinectRegion="{Binding ElementName=kinectRegion}" Height="100" />
